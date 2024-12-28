@@ -1,0 +1,9 @@
+# Remove close buttom
+#alltabs-button,
+.titlebar-buttonbox-container,
+#page-action-buttons,
+#tracking-protection-icon-container,
+#identity-box {
+	display: none;
+}
+

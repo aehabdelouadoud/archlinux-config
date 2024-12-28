@@ -1,0 +1,21 @@
+
+[global]
+corner_radius = 3
+gap_size = 10
+
+
+[urgency_low]
+background = "#74A096"
+foreground = "#D4BE98"
+frame_color = "#74A096"
+
+[urgency_normal]
+background = "#6A5F4C"
+foreground = "#D4BE98"
+frame_color = "#6A5F4C"
+
+[urgency_critical]
+background = "#EA6962"
+foreground = "#D4BE98"
+frame_color = "#EA6962"
+

@@ -1,0 +1,17 @@
+map J zoom out
+map K zoom in
+
+# Clipboard
+## Enabling clipboard
+set selection-clipboard clipboard
+
+## Hiding selection copying notification
+set selection-notification false
+
+# For not recoloring images in the pdf, in dark mode
+set recolor-reverse-video "true"
+
+# Set the theme
+include ./gruvbox-material
+
+map <C-o> feedkeys ":exec zathura $FILE<Return>"
