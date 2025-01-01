@@ -9,7 +9,7 @@
 (map! [:n] "<Leader>m" ":Maximize<CR>" "Toggle maximizing split")
 (map! [:n] "<Leader>z" ":ZenMode<CR>" "Toggle Zen Mode")
 (map! [:n] "<Leader>r" ":RunCode<CR>" "Run code")
-(map! [:n] "<leader>t" ":Lspsaga term_toggle<CR>" "Toggle floating terminal")
+; (map! [:n] "<leader>t" ":Lspsaga term_toggle<CR>" "Toggle floating terminal")
 
 ; (map! [:n] "<localleader>s" ":sp<CR>" "Open horizontal split")
 ; (map! [:n] "<localleader>w" ":vs<CR>" "Open vertical split")
@@ -18,7 +18,7 @@
 (map! [:n] "<leader>s" ":lua require(\"lsp_lines\").toggle()<CR>"  "Toggle lsp_lines")
 (map! [:n] "<C-H-CR>" ":ToggleTerm direction=float<CR>" "Toggle lsp_lines")
 
-(map! [:n] "<leader>b"  ":Telescope buffers<CR>" "Telescope buffers")
+(map! [:n] "<leader><leader>"  ":Telescope buffers<CR>" "Telescope buffers")
 ; (map! [:n] "<leader>lb" ":Telescope recall theme=ivy<CR>" "Telescope buffers")
 ; (map! [:n] "<leader>tb" ":RecallToggle<CR>" "Telescope buffers")
 

@@ -1,13 +1,11 @@
 alias reboot="sudo reboot"
 alias shutdown="sudo shutdown"
 
-alias ls="eza -1 --icons"
-alias ll="eza -l --icons"
-alias la="eza -la --icons"
-alias lt="eza -la --icons --tree"
+alias ls="lsd -1"
+alias la="lsd -1a"
+alias ll="lsd -la"
+alias lt="lsd -la --tree"
 
-alias t="task"
-alias vt="virt"
+alias ti="kitty @ set-spacing padding=0 && taskwarrior-tui && kitty @ set-spacing padding=default"
+alias bt="kitty @ set-spacing padding=0 && btop && kitty @ set-spacing padding=default"
 
-alias c="clear"
-alias e="exit"

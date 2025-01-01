@@ -29,6 +29,7 @@ let g:gruvbox_material_better_performance = 1
 colorscheme gruvbox-material
 
 " Enable line numbers
+set relativenumber
 set number
 
 " Enable auto-indentation

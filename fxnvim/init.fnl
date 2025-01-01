@@ -261,13 +261,14 @@
                            (require :modules.incline))}
 
               ;; Plantuml
-              ; :aklt/plantuml-syntax
-
-             ;{1 "https://gitlab.com/itaranto/plantuml.nvim"
-             ;   :opts {:render_on_write true
-             ;   :renderer {:options {:dark_mode false :format nil :prog :feh}
-             ;   :type :image}}
-             ;   :version "*"}	
+             :aklt/plantuml-syntax
+             {1 "https://gitlab.com/itaranto/plantuml.nvim"
+                :opts {:render_on_write true
+                :renderer {:options {:dark_mode false
+                                     :format nil
+                                     :prog :feh}
+                           :type :image}}
+                :version "*"}
 
               {1 :ptdewey/pendulum-nvim
                  :config (fn []
@@ -332,10 +333,10 @@
                  :event :VeryLazy
                  :ft   [:org]}
 
-              ; {1 :nvim-neorg/neorg
-              ;    :config true
-              ;    :lazy false
-              ;    :version "*"}
+              {1 :nvim-neorg/neorg
+                 :lazy false
+                 :version "*"
+                 :config (fn [] ((. (require :neorg) :setup) {:load {:core.concealer {:config {:icon_preset :varied}} :core.defaults {}}}))}
 
               {1 :akinsho/flutter-tools.nvim
                  :config true
@@ -443,16 +444,8 @@
              {1 :lervag/vimtex
                 :init (fn []
                         (set vim.g.vimtex_view_method :zathura)
-                        (set vim.g.vimtex_compiler_method :latexmk))
+                        (set vim.g.vimtex_compiler_method :xelatex))
                 :lazy false}
-
-             {1 "https://gitlab.com/itaranto/plantuml.nvim"
-                :opts {:render_on_write true
-                       :renderer {:options {:dark_mode false
-                                            :format nil
-                                            :prog :feh}
-                                  :type :image}}
-                :version "*"}	
 
              ; {1 :lukas-reineke/indent-blankline.nvim
              ;    :dependencies [:TheGLander/indent-rainbowline.nvim]
@@ -482,7 +475,6 @@
 
              ] ;; End of plugins.
 
-
             {:checker {:enabled false}
             :install {:colorscheme [:gruvbox-material]}})
 
@@ -495,3 +487,4 @@
 (vim.cmd "let g:gruvbox_material_background = 'soft'")
 (vim.cmd "colorscheme gruvbox-material")
 (set vim.opt.laststatus 3)
+(require :core.custom-highlights)

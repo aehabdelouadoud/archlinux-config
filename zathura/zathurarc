@@ -14,4 +14,7 @@ set recolor-reverse-video "true"
 # Set the theme
 include ./gruvbox-material
 
+# Disable statusline
+set guioptions none
+
 map <C-o> feedkeys ":exec zathura $FILE<Return>"

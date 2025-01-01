@@ -19,7 +19,7 @@
     (set vim.g.neovide_padding_right  right)
     (set vim.g.neovide_padding_bottom bottom)))
 
-(local padding-style "nyoom")
+(local padding-style "mini")
 
 (match padding-style
    "nyoom"  (set-padding 45 40 38 20)

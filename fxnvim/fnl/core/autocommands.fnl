@@ -52,3 +52,9 @@
 
     (vim.api.nvim_create_autocmd :WinEnter {:callback set-lsp-lines})))
 (sync-lsp-lines-on-split-change)	; lsp-lines
+
+; Disable expanding tab to spaces in certain files
+(vim.api.nvim_create_autocmd :FileType
+                             {:callback (fn [] (set vim.opt.expandtab false))
+                             :pattern ["cmake"]})
+

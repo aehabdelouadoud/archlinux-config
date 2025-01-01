@@ -1,0 +1,80 @@
+gruvbox_material:
+  # Background colors: dark and light mode
+  background:
+    dark: "#282828"  # Dark background for the overall UI (used in dark mode)
+    light: "#f2e5bc"  # Light background for the overall UI (used in light mode)
+
+  # Text color, used for most text throughout the UI
+  foreground: "#ebdbb2"  # Main text color, light neutral color for readability
+
+  # Selection colors: for highlighting selected text or items
+  selection:
+    background: "#504945"  # Background color when text is selected
+    foreground: "#d5c4a1"  # Text color for selected text (ensures contrast with selection background)
+
+  # Cursor colors: used for the cursor position
+  cursor: 
+    background: "#fabd2f"  # Cursor background color (a bright yellow/orange for visibility)
+    foreground: "#282828"  # Cursor foreground color (dark to match background)
+
+  # Main color palette, used for different elements in the UI
+  colors:
+    black: "#282828"  # Dark color, often used for borders or background elements
+    red: "#fb4934"  # Red color, typically used for errors, warnings, or highlights
+    green: "#b8bb26"  # Green color, often used for success or positive actions
+    yellow: "#fabd2f"  # Yellow color, often used for warnings or highlights
+    blue: "#83a598"  # Blue color, used for information or active links
+    purple: "#d3869b"  # Purple color, often used for emphasis or links
+    aqua: "#8ec07c"  # Aqua/greenish color, used for active elements or accents
+    orange: "#fe8019"  # Orange color, used for emphasis or alerts
+    
+    bright_black: "#928374"  # Dimmed black, typically used for less important elements
+    bright_red: "#fb4934"  # Bright red, used for highlighted errors or attention-grabbing elements
+    bright_green: "#b8bb26"  # Bright green, used for highlighted success or positive actions
+    bright_yellow: "#fabd2f"  # Bright yellow, used for emphasized warnings or active highlights
+    bright_blue: "#83a598"  # Bright blue, used for focused elements or active UI components
+    bright_purple: "#d3869b"  # Bright purple, used for emphasis or special elements
+    bright_aqua: "#8ec07c"  # Bright aqua, used for emphasizing or active elements
+    bright_orange: "#fe8019"  # Bright orange, used for focus or active elements
+
+  # Accent colors: these are often used for highlighting or important UI elements
+  accent:
+    green: "#8ec07c"  # Green accent color, used for active or highlighted elements
+    orange: "#fe8019"  # Orange accent color, used for attention-grabbing or focus
+    yellow: "#fabd2f"  # Yellow accent color, for warnings or focus
+    red: "#fb4934"  # Red accent color, used for errors or critical actions
+    purple: "#d3869b"  # Purple accent color, used for emphasizing specific elements
+    blue: "#83a598"  # Blue accent color, for focused or active elements
+    aqua: "#8ec07c"  # Aqua accent color, often used for active buttons or selected items
+
+  # Link colors for web pages or clickable elements
+  links:
+    normal: "#8ec07c"  # Unvisited links (aqua color for freshness)
+    visited: "#b8bb26"  # Visited links (greenish color for contrast)
+
+  # UI elements: specific color configurations for buttons, panels, and text inputs
+  ui_elements:
+    button_background: "#504945"  # Dark background for buttons, so they're distinguishable from other elements
+    button_text: "#ebdbb2"  # Text color for buttons, ensuring readability against the dark background
+    panel_background: "#3c3836"  # Background for panels or sidebars, darker than the default background for contrast
+    menu_background: "#32302f"  # Darker background for menus to make them stand out from the main content
+    status_bar_background: "#1d2021"  # Dark background for status bar (often at the bottom of the screen)
+    status_bar_text: "#d5c4a1"  # Text color for status bar (light color for contrast against the dark status bar)
+    input_background: "#3c3836"  # Dark background for text input fields
+    input_text: "#ebdbb2"  # Text color for input fields, ensuring readability on dark backgrounds
+
+  # Highlight colors: used for focusing or highlighting selected elements
+  highlights:
+    highlight_background: "#504945"  # Background color for highlighted text or focused elements
+    highlight_foreground: "#d5c4a1"  # Foreground color for highlighted text (ensures good contrast with highlight background)
+    active_element: "#83a598"  # Color for an active UI element (like a focused button or input field)
+
+  # Notification colors: used for feedback messages (success, error, warning)
+  notifications:
+    success: "#b8bb26"  # Green color for success messages or positive feedback
+    warning: "#fabd2f"  # Yellow color for warning messages or caution
+    error: "#fb4934"  # Red color for error messages or critical alerts
+    info: "#83a598"  # Blue color for informational messages
+    notification_background: "#fe8019"  # Background color for notification pop-ups (orange to grab attention)
+    notification_text: "#ebdbb2"  # Text color for notifications, making it readable on the notification background
+

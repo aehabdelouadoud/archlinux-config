@@ -15,6 +15,24 @@
           (#any-of? @keyword.function "hashfn" "#")
           (#set! conceal "#"))
 
+[
+  "("
+  "{"
+  "["
+] @lisp_punctuation_left.bracket
+
+[
+  ")"
+  "}"
+  "]"
+] @lisp_punctuation_right.bracket
+
+;
+; [
+;   (string)
+;   (string_binding)
+; ] @string
+
 ; [
 ;   ")"
 ;   "}"
