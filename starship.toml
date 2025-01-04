@@ -1,6 +1,6 @@
 add_newline = false
 format = """
-$username$hostname$directory $git_branch $git_commit $git_status
+$username$hostname$directory $git_branch $git_state $git_commit $git_status
 $character
 """
 
@@ -39,9 +39,9 @@ cherry_pick = "[ PICKING](bold red)"
 untracked  = '[ $count](white)'  #  ++
 modified   = '[ $count](red)'    # 
 staged     = '[ $count](blue)'   #  ++
-up_to_date = '[ $count](green)'
 renamed    = '[ $count](megenta)'
 deleted    = '[ $count](red)'
+up_to_date = '[ $count](green)'
 conflicted = " "
 ahead      = "󰛃 "
 behind     = "󰛀 "
@@ -67,7 +67,7 @@ style = "bold dimmed white"
 
 [time]
 disabled = true
-format = '🕙[\[ $time \]]($style) '
+format = ' [\[ $time \]]($style) '
 time_format = "%T"
 
 [username]

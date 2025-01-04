@@ -1,32 +1,7 @@
-# Remove close buttom
-#alltabs-button,
-#page-action-buttons,
-#tracking-protection-icon-container,
-#identity-box {
-    display: none;
-}
-
-/* hides the native tabs */
 #TabsToolbar {
     visibility: collapse;
 }
-/* leaves space for the window buttons */
-#nav-bar {
-    margin-top: -8px;
-    margin-right: 74px;
-    margin-bottom: -4px;
+
+#navigator-toolbox {
+    visibility: collapse;
 }
-
-/*
- * Do not remove the @namespace line -- it's required for correct functioning
- */
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
-
-/*
- * Hide tab bar, navigation bar and scrollbars
- * !important may be added to force override, but not necessary
- * #content is not necessary to hide scroll bars
- */
-#TabsToolbar {visibility: collapse;}
-#navigator-toolbox {visibility: collapse;}
-browser {margin-right: -14px; margin-bottom: -14px;}
