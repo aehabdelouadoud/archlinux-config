@@ -65,12 +65,11 @@
 (map! [:v] "<A-k>" ":MoveBlock -1<CR>" "Move block Up")
 (map! [:v] "<A-j>" ":MoveBlock 1<CR>"  "Move block Down")
 
-; (map! [:v] "<C-H-->" ":MoveBlock -1<CR>" "Move block Up") ;; FIXME: Better splitting keybindings
-; (map! [:v] "<C-H-|>" ":MoveBlock 1<CR>"  "Move block Down")
-
 (local dropbar-api (require :dropbar.api))
 (vim.keymap.set :n "<Leader>;" dropbar-api.pick
                 {:desc "Pick symbols in winbar"})	
+
+; (map! [:n] "<Leader>;" ":lua require(\"dropbar.api\").pick()<CR>"  "Pick symbols in winbar")
 
 ; (vim.keymap.set :n "[;" dropbar-api.goto_context_start
 ;                 {:desc "Go to start of current context"})

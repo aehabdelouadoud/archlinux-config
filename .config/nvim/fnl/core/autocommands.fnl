@@ -12,17 +12,6 @@
                                               (vim.diagnostic.config {:virtual_lines (not floating)
                                                                       :virtual_text floating}))})	
 
-; Insert a list of unicode icons.
-(set-forcibly! insert_unicode_chars
-               (fn []
-                 (let [start-code 57344
-                       end-code 63744]
-                   (for [i start-code end-code]
-                     (local hex (string.format "%04x" i))
-                     (local char (vim.fn.nr2char i))
-                     (local line (.. char " 0x" hex "  \n"))
-                     (vim.api.nvim_put [line] :l true true)))))
-
 ; Disable folding in some buffers ex: Neotree.
 (vim.api.nvim_create_autocmd :FileType
                              {:callback (fn []
@@ -38,13 +27,24 @@
                                                false))
                               :pattern :oil})
 
+; Disable folding in certain file types
 (vim.api.nvim_create_autocmd :FileType
                              {:callback (fn []
                                           (set vim.opt_local.foldmethod :manual)
                                           (set vim.opt_local.foldenable false))
                               :pattern [:oil :neo-tree]})
 
-; just fixes the issue of(when i move lsp-lines gets on, and that's a bit annoying)
+; Disable expanding tab to spaces in certain files
+(vim.api.nvim_create_autocmd :FileType
+                             {:callback (fn [] (set vim.opt.expandtab false))
+                             :pattern ["cmake"]})
+
+; Enable wrapping in certain files
+(vim.api.nvim_create_autocmd :FileType
+                             {:callback (fn [] (set vim.opt.wrap true))
+                             :pattern ["tex"]})
+
+; just fixes the issue of (when i move lsp-lines gets on, and that's a bit annoying)
 (fn sync-lsp-lines-on-split-change []
   (let [lsp-lines-on false]
     (fn set-lsp-lines []
@@ -52,9 +52,4 @@
 
     (vim.api.nvim_create_autocmd :WinEnter {:callback set-lsp-lines})))
 (sync-lsp-lines-on-split-change)	; lsp-lines
-
-; Disable expanding tab to spaces in certain files
-(vim.api.nvim_create_autocmd :FileType
-                             {:callback (fn [] (set vim.opt.expandtab false))
-                             :pattern ["cmake"]})
 

@@ -42,6 +42,7 @@
                                          ((. (require :luasnip) :lsp_expand) args.body))}]
            ; Completion sources configuration
            :sources (cmp.config.sources [{:name :nvim_lsp}
+                                         ; {:name :copilot}
                                          {:name :luasnip}
                                          {:name :buffer}
                                          {:name :path}
@@ -49,6 +50,7 @@
                                                 :option {:enable_in_context (fn [] true)
                                                 :keep_all_entries false
                                                 :preselect_correct_word true}}])
+           :experimental {:ghost_text true}
 
            ; Configure completion window
            :formatting {:fields [:kind

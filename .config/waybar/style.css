@@ -185,6 +185,10 @@ tooltip {
 }
 
 #custom-pickcolor {
+  /*
+   * color: #32302F;
+   * background: #D4BE98;
+   **/
   color: @main-fg;
   background: @main-bg;
   opacity: 1;

@@ -2,6 +2,12 @@
 export DISTRO="arch" # To know the distro.
 export SCRIPTS_DIR="/home/x/dotfiles/scripts"
 
+export CHROME_EXECUTABLE="google-chrome-stable"
+
+# Android sdk
+export ANDROID_HOME=/opt/android-sdk
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
+
 #
 set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths
 

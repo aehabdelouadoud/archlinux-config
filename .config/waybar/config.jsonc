@@ -132,7 +132,8 @@
     "format": "󰴱{}",
     "rotate": 0,
     "exec": "echo ; echo  Pick a color to clipboard",
-    "on-click": "hyprpicker -a; notify-send \"$(wl-paste)\" | wl-paste >> $HOME/shits/colorpicker.info",
+    "on-click": "hyprpicker -a; sleep 0.2; notify-send \"Picked Color\" \"<span background='$(wl-paste)' font='15px'>$(wl-paste)</span>\"",
+
     "interval": 86400, // once every day
     "tooltip": true
   },
@@ -168,8 +169,11 @@
       "2": "₁",
       "3": "₂",
       "4": "₃",
-      "5": "₄",
-      "6": "₅󰦚",
+      "5": "₄",
+      "6": "₅",
+      "7": "₆󰝫",
+      "8": "₇",
+      "9": "₈󰦚",
       "urgent": "",
       "focused": "",
       "default": "ₓ"
