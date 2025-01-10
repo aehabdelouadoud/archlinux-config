@@ -1,5 +1,17 @@
 #!/bin/bash
 
+notify-send -h string:wf-recorder:record -t 1000 "Recording in:" "<span color='#EA6962' font='26px'><b>3</b></span>"
+
+sleep 1
+
+notify-send -h string:wf-recorder:record -t 1000 "Recording in:" "<span color='#EA6962' font='26px'><b>2</b></span>"
+
+sleep 1
+
+notify-send -h string:wf-recorder:record -t 950 "Recording in:" "<span color='#EA6962' font='26px'><b>1</b></span>"
+
+sleep 1
+
 path="invalid"
 good_audio_file=/tmp/temp-audio.wav
 noisy_audio_file=/tmp/noisy_temp-audio.wav

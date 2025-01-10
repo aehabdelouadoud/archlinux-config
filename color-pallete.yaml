@@ -1,8 +1,10 @@
 gruvbox_material:
   # Background colors: dark and light mode
   background:
-    dark: "#282828"  # Dark background for the overall UI (used in dark mode)
-    light: "#f2e5bc"  # Light background for the overall UI (used in light mode)
+    dark: "#32302F"  # Dark background for the overall UI (used in dark mode)
+    light: "#D4BE98"  # Light background for the overall UI (used in light mode)
+
+    # Done
 
   # Text color, used for most text throughout the UI
   foreground: "#ebdbb2"  # Main text color, light neutral color for readability

@@ -131,9 +131,8 @@
   "custom/pickcolor": {
     "format": "󰴱{}",
     "rotate": 0,
-    "exec": "echo ; echo  Pick a color to clipboard",
+    "exec": "echo ; echo 󰴱 Pick a color to clipboard",
     "on-click": "hyprpicker -a; sleep 0.2; notify-send \"Picked Color\" \"<span background='$(wl-paste)' font='15px'>$(wl-paste)</span>\"",
-
     "interval": 86400, // once every day
     "tooltip": true
   },
@@ -284,7 +283,7 @@
     "return-type": "plain",
     "format": " {} 󰮯 ",
     "rotate": 0,
-    "on-click": "hyprctl dispatch exec \"[size 70%;float] kitty -e sudo paru -Syu\"",
+    "on-click": "hyprctl dispatch exec \"[size 70%;float] kitty -e paru -Syu\"",
     "interval": 300, // once every hour
     "tooltip": true
   },
