@@ -96,12 +96,15 @@ tooltip {
 
 #idle_inhibitor,
 #clock  {
-  color: #7DAEA3;
-  background: @main-bg;
+  color: #32302F;
+  background: #7DAEA3;
   opacity: 1;
   margin: 5px 0px 5px 0px;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-right: 7px;
+  margin-left: 7px;
+  border-radius: 3px;
 }
 
 #custom-music.Playing,
@@ -163,8 +166,8 @@ tooltip {
   margin-left: 8px;
   margin-right: 8px;
 
-  color: #D8A657;
-  background: @main-bg;
+  color: @main-bg;
+  background: #D8A657;
   opacity: 1;
   margin: 5px 5px 5px 5px;
   padding-left: 4px;

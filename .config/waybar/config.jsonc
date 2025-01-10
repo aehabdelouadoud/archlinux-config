@@ -10,10 +10,8 @@
   "modules-left": [
     "custom/padd",
     // "custom/todos",
-    "custom/l_end",
-    "idle_inhibitor",
+    // "idle_inhibitor",
     "clock",
-    "custom/r_end",
     "custom/updates",
     "custom/l_end",
     "custom/pickcolor",
