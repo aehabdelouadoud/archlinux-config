@@ -1,0 +1,4 @@
+lynis
+firejail
+shellcheck
+

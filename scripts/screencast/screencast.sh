@@ -1,15 +1,10 @@
 #!/bin/bash
 
-notify-send -h string:wf-recorder:record -t 1000 "Recording in:" "<span color='#EA6962' font='26px'><b>3</b></span>"
-
+notify-send -h string:wf-recorder:record -t 1000 "Recording in:" "<span color='#EA6962' font='20px'><b>3</b></span>"
 sleep 1
-
-notify-send -h string:wf-recorder:record -t 1000 "Recording in:" "<span color='#EA6962' font='26px'><b>2</b></span>"
-
+notify-send -h string:wf-recorder:record -t 1000 "Recording in:" "<span color='#EA6962' font='20px'><b>2</b></span>"
 sleep 1
-
-notify-send -h string:wf-recorder:record -t 950 "Recording in:" "<span color='#EA6962' font='26px'><b>1</b></span>"
-
+notify-send -h string:wf-recorder:record -t 950 "Recording in:" "<span color='#EA6962' font='20px'><b>1</b></span>"
 sleep 1
 
 path="invalid"
@@ -20,6 +15,8 @@ video_file=/tmp/temp-video.mkv
 wf_recorder_pid=0
 ffplay_pid=0
 ffmpeg_pid=0
+
+audio=off
 
 # Iterate through all passed arguments
 for arg in "$@"; do
@@ -81,10 +78,16 @@ while true; do
             safe_kill $wf_recorder_pid
             safe_kill $ffplay_pid
             safe_kill $ffmpeg_pid
-            ffmpeg -i $good_audio_file -i $video_file -c:v copy -c:a copy "$path/$(date +%Y-%m-%d_%H-%M-%S).mkv" 
-            # Clean temp files
-            rm "$good_audio_file"
-            rm "$noisy_audio_file"
+            if [[ $arg == --audio ]]; then
+              ffmpeg -i $good_audio_file -i $video_file -c:v copy -c:a copy "$path/$(date +%Y-%m-%d_%H-%M-%S).mkv" 
+              # Clean temp audio files
+              rm "$good_audio_file"
+              rm "$noisy_audio_file"
+            else
+              ffmpeg -i $video_file -c:v copy -c:a copy "$path/$(date +%Y-%m-%d_%H-%M-%S).mkv" 
+            fi
+
+            # Clean temp video file
             rm "$video_file"
             break 
             ;;

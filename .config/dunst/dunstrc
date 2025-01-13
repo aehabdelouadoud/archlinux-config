@@ -1,20 +1,27 @@
 [global]
-origin = top-right
-corner_radius = 3
-gap_size = 10
+    origin = top-right
+    corner_radius = 3
+    gap_size = 10
 
 [urgency_low]
-background = "#75A298"
-foreground = "#32302F"
-frame_color = "#75A298"
+    background = "#75A298"
+    foreground = "#32302F"
+    frame_color = "#75A298"
 
 [urgency_normal]
-background = "#D4BE98"
-foreground = "#32302F"
-frame_color = "#D4BE98"
+    background = "#D4BE98"
+    foreground = "#32302F"
+    frame_color = "#D4BE98"
 
 [urgency_critical]
-background = "#EA6962"
-foreground = "#32302F"
-frame_color = "#EA6962"
+    background = "#EA6962"
+    foreground = "#32302F"
+    frame_color = "#EA6962"
 
+[play_sound]
+    summary = "*"
+    script = "/home/x/dotfiles/.config/dunst/scripts/alert.sh"
+
+[play_sound]
+    body = "^Battery low"
+    script = "/home/x/dotfiles/.config/dunst/scripts/alert.sh"

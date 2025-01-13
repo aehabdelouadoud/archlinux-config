@@ -279,7 +279,7 @@
   "custom/updates": {
     "exec": "paru -Qu | wc -l",
     "return-type": "plain",
-    "format": " {} 󰮯 ",
+    "format": " 󰮯 {} ",
     "rotate": 0,
     "on-click": "hyprctl dispatch exec \"[size 70%;float] kitty -e paru -Syu\"",
     "interval": 300, // once every hour
