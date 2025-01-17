@@ -22,6 +22,7 @@
                                           "java $fileNameWithoutExt"]
                                    :python "python3 -u"
                                    :fennel "fennel *.fnl"
+                                   :go "go run main.go"
                                    ; :rust ["cd $dir &&"
                                    ;        "rustc $fileName &&"
                                    ;        :$dir/$fileNameWithoutExt]

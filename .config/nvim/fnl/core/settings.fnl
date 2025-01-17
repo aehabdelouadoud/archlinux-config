@@ -1,15 +1,15 @@
 (import-macros {: set! : set+} :hibiscus.vim)
 
-;; Set spelling settings
-(set! spell true)
-(set! spelllang [:en_us])	
-
 ;; Define a list of fonts
 (local fonts ["0xProto Nerd Font:h9"
               "Liga SFMono Nerd Font:h9.5"
               "Terminess Nerd Font:h9.5"
               "JetBrainsMono Nerd Font:h9"
               "FiraCode Nerd Font:h9"])
+
+;; Set spelling settings
+(set! spell true)
+(set! spelllang [:en_us])	
 
 ;; Set the guifont option to the second font in the list
 (set! guifont (. fonts 1))
@@ -60,6 +60,21 @@
 (set! conceallevel  2)
 (set! concealcursor "")
 
+;; gives a global statusline instead of one for every split, and there is always a separator between splits
+(set! laststatus 3)
+
+(set! scrolloff 3)
+
+(set! guicursor "n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor")
+
+; Tab
+(set! tabstop 2)
+(set! shiftwidth 2)
+(set! softtabstop 2)
+(set! expandtab true)
+
+(set! shell "/usr/bin/fish")
+
 ;; For ufo nvim
 (set! foldcolumn              :1)
 (set! foldlevel               99)
@@ -81,20 +96,6 @@
 (local signs {:Error " " :Hint " " :Info " " :Warn " "}) ;;  
 (each [type icon (pairs signs)] (local hl (.. :DiagnosticSign type))
   (vim.fn.sign_define hl {:numhl hl :text icon :texthl hl}))
-
-
-;; gives a global statusline instead of one for every split, and there is always a separator between splits
-(set! laststatus 3)
-
-(set! scrolloff 3)
-
-(set! guicursor "n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor")
-
-; Tab
-(set! tabstop 2)
-(set! shiftwidth 2)
-(set! softtabstop 2)
-(set! expandtab true)
 
 ; Disable virtual_text since it's redundant due to lsp_lines.
 (vim.diagnostic.config {:virtual_text false})	
