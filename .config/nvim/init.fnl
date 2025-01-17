@@ -341,14 +341,14 @@
                  :dependencies [:nvim-lua/plenary.nvim :stevearc/dressing.nvim]
                  :lazy false}	
 
-              {1 :nvim-neo-tree/neo-tree.nvim 
-                 :Lazy :VeryLazy
-                 :branch :v3.x
-                 :dependencies [:nvim-lua/plenary.nvim
-                                              :nvim-tree/nvim-web-devicons
-                                              :MunifTanjim/nui.nvim]
-                 :config (fn []
-                           (require :modules.neo-tree))}
+              ; {1 :nvim-neo-tree/neo-tree.nvim 
+              ;    :Lazy :VeryLazy
+              ;    :branch :v3.x
+              ;    :dependencies [:nvim-lua/plenary.nvim
+              ;                                 :nvim-tree/nvim-web-devicons
+              ;                                 :MunifTanjim/nui.nvim]
+              ;    :config (fn []
+              ;              (require :modules.neo-tree))}
 
              ; {1 :nvimdev/lspsaga.nvim
              ;    :Event :LspAttach
