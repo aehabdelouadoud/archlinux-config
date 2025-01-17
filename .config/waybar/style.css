@@ -95,7 +95,7 @@ tooltip {
 }
 
 #idle_inhibitor,
-#clock  {
+#clock {
   color: #32302F;
   background: #7DAEA3;
   opacity: 1;
@@ -174,24 +174,7 @@ tooltip {
   padding-right: 4px;
 }
 
-#mpris {
-  border-radius: 3px;
-  margin-left: 8px;
-  margin-right: 8px;
-
-  color: @main-fg;
-  background: @main-bg;
-  opacity: 1;
-  margin: 5px 5px 5px 5px;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
 #custom-pickcolor {
-  /*
-   * color: #32302F;
-   * background: #D4BE98;
-   **/
   color: @main-fg;
   background: @main-bg;
   opacity: 1;
@@ -210,6 +193,43 @@ tooltip {
   margin-right: 7px;
   margin-left: 7px;
   border-radius: 3px;
+}
+
+#mpd {
+  border-radius: 3px;
+  margin-left: 8px;
+  margin-right: 8px;
+
+  color: #32302F;
+  background: #89B482;
+  opacity: 1;
+  margin: 5px 0px 5px 0px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-right: 7px;
+  margin-left: 7px;
+}
+
+#mpris {
+  border-radius: 3px;
+  margin-left: 8px;
+  margin-right: 8px;
+
+  color: #32302F;
+  background: #89B482;
+  opacity: 1;
+  margin: 5px 5px 5px 5px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#custom-screenshot {
+  color: @main-fg;
+  background: #A89984;
+  opacity: 1;
+  margin: 5px 0px 5px 0px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 #custom-todos {
