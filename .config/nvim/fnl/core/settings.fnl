@@ -67,12 +67,6 @@
 
 (set! guicursor "n-v-c-sm-i-ci-ve:block,r-cr-o:hor20,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor")
 
-; Tab
-(set! tabstop 2)
-(set! shiftwidth 2)
-(set! softtabstop 2)
-(set! expandtab true)
-
 (set! shell "/usr/bin/fish")
 
 ;; For ufo nvim
@@ -81,6 +75,12 @@
 (set! foldlevelstart          99)
 (set! foldenable              true)
 (set  vim.opt_local.foldlevel 99)
+
+; Tab
+(set! tabstop 2)
+(set! shiftwidth 2)
+(set! softtabstop 2)
+(set! expandtab true)
 
 ;; Insert-mode completion
 ;; (set+ :shortmess :c)

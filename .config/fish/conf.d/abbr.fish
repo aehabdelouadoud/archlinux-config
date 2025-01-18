@@ -10,6 +10,6 @@ abbr tw 'timew'
 abbr t 'task'
 abbr c 'clear'
 abbr q 'exit'
-abbr z 'zathura'
+# abbr z 'zathura'
 
 abbr usvpn 'sudo openvpn --config  /etc/openvpn/client/us-free-3.protonvpn.udp.ovpn > /dev/null'

@@ -17,3 +17,6 @@ alias ti="kitty @ set-spacing padding=0 && taskwarrior-tui && kitty @ set-spacin
 alias bt="kitty @ set-spacing padding=0 && btop && kitty @ set-spacing padding=default"
 
 alias rg='rg --colors \'match:bg:yellow\' --colors \'match:fg:black\''
+
+alias z='zoxide'
+

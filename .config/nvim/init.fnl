@@ -17,9 +17,9 @@
               ; Colorscheme
               :horanmustaplot/oxocarbon.nvim
               :sainnhe/gruvbox-material
-              :folke/tokyonight.nvim
-              :akinsho/horizon.nvim
-              :olimorris/onedarkpro.nvim
+              ; :folke/tokyonight.nvim
+              ; :akinsho/horizon.nvim
+              ; :olimorris/onedarkpro.nvim
 
               {1 :nvim-lualine/lualine.nvim
                  :dependencies :nvim-tree/nvim-web-devicons
@@ -253,10 +253,10 @@
               {1 :fnune/recall.nvim
                  :config true}
 
-              {1 :b0o/incline.nvim
-                 :event [:BufReadPost :BufAdd :BufNewFile]
-                 :config (fn []
-                           (require :modules.incline))}
+              ; {1 :b0o/incline.nvim
+              ;    :event [:BufReadPost :BufAdd :BufNewFile]
+              ;    :config (fn []
+              ;              (require :modules.incline))}
 
               ;; Plantuml
              :aklt/plantuml-syntax
@@ -384,7 +384,7 @@
                 :Lazy :VeryLazy
                 :opts {
                   :on_close (fn []
-                              (vim.cmd "Lspsaga winbar_toggle")
+                              ; (vim.cmd "Lspsaga winbar_toggle")
                               ((. (require :lualine) :hide) {:unhide true})
                               ((. (require :incline) :enable) {})
                               (set vim.wo.number true)
@@ -393,13 +393,12 @@
                               (set vim.wo.foldenable true))
 
                   :on_open  (fn [] 
-                              (vim.cmd "Lspsaga winbar_toggle")
-                              ((. (require :lualine) :hide) {:unhide false})
+                              ; (vim.cmd "Lspsaga winbar_toggle")
+                              (. (require :lualine) :hide)
                               ((. (require :incline) :disable) {})
                               (set vim.wo.number false)
                               (set vim.wo.relativenumber false)
-                              (set vim.wo.foldenable false)
-                              (vim.cmd "colorscheme gruvbox-material"))}}
+                              (set vim.wo.foldenable false))}}
 
              {1 :ziontee113/color-picker.nvim
                 :config true}
@@ -472,6 +471,10 @@
                 :config true
                 :dependencies [:nvim-lua/plenary.nvim :stevearc/dressing.nvim]
                 :lazy false}
+
+             {1 :ariedov/android-nvim
+                :config (fn []
+                          ((. (require :android-nvim) :setup)))}	
 
              ; {1 :hrsh7th/nvim-cmp
              ;                               :dependencies [:Jezda1337/nvim-html-css]
