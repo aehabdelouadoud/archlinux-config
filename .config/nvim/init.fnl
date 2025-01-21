@@ -476,6 +476,15 @@
                 :config (fn []
                           ((. (require :android-nvim) :setup)))}	
 
+             {1 :rcarriga/nvim-dap-ui
+                :dependencies [:mfussenegger/nvim-dap :nvim-neotest/nvim-nio]}
+
+             ;{1 :Bekaboo/deadcolumn.nvim
+             ;   :config true}
+
+             ;{1 :ecthelionvi/NeoColumn.nvim
+             ;   :opts {}}	
+
              ; {1 :hrsh7th/nvim-cmp
              ;                               :dependencies [:Jezda1337/nvim-html-css]
              ;                               :opts {:sources [{:name :html-css
@@ -484,9 +493,6 @@
              ;                                                          :notify false
              ;                                                          :style_sheets ["https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
              ;                                                                         "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"]}}]}}
-
-             
-
              ] ;; End of plugins.
 
             {:checker {:enabled false}

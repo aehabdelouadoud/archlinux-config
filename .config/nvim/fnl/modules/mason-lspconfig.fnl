@@ -7,7 +7,6 @@
 ((. mason-lspconfig :setup) {:ensure_installed [ :lua_ls
                                                  :html
                                                  :cssls
-                                                 :fennel_language_server
                                                  :marksman
                                                  :bashls
                                                  :vale_ls]})
