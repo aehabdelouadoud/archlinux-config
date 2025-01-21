@@ -10,6 +10,8 @@ export PATH="$HOME/.luarocks/bin/:$PATH"
 # Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 
+export EDITOR=vim
+
 # Colorizing man pages
 set -g man_blink -o red
 set -g man_bold -o cyan
