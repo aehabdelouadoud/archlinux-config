@@ -2,8 +2,8 @@
 config.load_autoconfig(False)
 
 # Setting default page
-c.url.start_pages  = "~/.config/qutebrowser/custom_start_page/index.html"
-c.url.default_page = "~/.config/qutebrowser/custom_start_page/index.html"
+c.url.start_pages  = "~/.config/qutebrowser/ui/dashboard/index.html"
+c.url.default_page = "~/.config/qutebrowser/ui/dashboard/index.html"
 
 # Fonts
 c.fonts.default_family   = '8.5pt "JetBrainsMono Nerd Font"'
@@ -20,13 +20,15 @@ c.colors.webpage.darkmode.policy.images = "smart"
 config.bind(",t",       "open -t")                                                        # Open new tab
 config.bind(",m",       "hint links spawn mpv --keep-open=yes {hint-url}")                # Play video via mpv
 config.bind(",M",       "hint links spawn yt-dlp {hint-url} -P ~/downloads/qutebrowser")  # Download video from youtube using yt-dlp
-config.bind(",T",       "hint links spawn yt-dlp {hint-url} -P ~/downloads/qutebrowser")  # Download video from youtube using yt-dlp
+
+config.bind(",T",       "spawn --userscript ~/.config/qutebrowser/scripts/translate.sh")  # Translate
+config.bind(",p",       "hint links spawn ~/.config/qutebrowser/scripts/umpv.sh {hint-url}")
 
 config.bind("<Ctrl+k>", "completion-item-focus prev", mode="command")
 config.bind("<Ctrl+j>", "completion-item-focus next", mode="command")
 
-config.bind(',p', 'spawn --userscript qute-pass --dmenu-invocation dmenu')
-config.bind(',P', 'spawn --userscript qute-pass --dmenu-invocation dmenu --password-only')
+config.bind(',k', 'spawn --userscript qute-pass --dmenu-invocation dmenu')
+config.bind(',K', 'spawn --userscript qute-pass --dmenu-invocation dmenu --password-only')
 
 # WEBSITES PERMISSIONS
 ## Javascript
@@ -44,8 +46,8 @@ c.statusbar.show   = "never" # Never show statusbar
 c.tabs.show        = "never" # Never show tabs
 c.scrolling.bar    = "never"
 c.zoom.default     = "80%"
-config.source("./themes/base16-gruvbox-material-dark-medium.config.py") # Set the theme.
-c.content.user_stylesheets = ['./styles/gruvbox_material.css']
+config.source("./ui/themes/base16-gruvbox-material-dark-medium.config.py") # Set the theme.
+c.content.user_stylesheets = ['./ui/styles/gruvbox_material.css']
 
 # Adblocking
 c.content.blocking.enabled = True
@@ -100,13 +102,15 @@ c.content.tls.certificate_errors = 'block'
 c.content.javascript.enabled = False
 
 # Re-enable JavaScript for YouTube to ensure proper functionality of the site
-config.set('content.javascript.enabled', True, 'file:///home/x/.config/qutebrowser/custom_start_page/index.html')
+config.set('content.javascript.enabled', True, 'file:///home/x/.config/qutebrowser/ui/dashboard/index.html')
 config.set('content.javascript.enabled', True, 'https://www.youtube.com')
 config.set('content.javascript.enabled', True, 'https://mail.proton.me')
 config.set('content.javascript.enabled', True, 'https://html.duckduckgo.com/html')
 config.set('content.javascript.enabled', True, 'https://chat.deepseek.com')
 config.set('content.javascript.enabled', True, 'https://chatgpt.com')
 config.set('content.javascript.enabled', True, 'https://www.reddit.com')
+config.set('content.javascript.enabled', True, 'https://fennel-lang.org/see')
+config.set('content.javascript.enabled', True, 'https://github.com/*')
 
 config.set('content.local_storage', True, 'https://mail.proton.me')
 config.set('content.register_protocol_handler', True, 'https://mail.proton.me#mailto=%25s')
@@ -119,5 +123,5 @@ config.set('content.javascript.enabled', True, 'https://chatgpt.com')
 config.set("downloads.location.directory", "~/downloads/browser/")
 
 # Set dark mode for specific websites
+config.set("colors.webpage.darkmode.enabled", True, "https://html.duckduckgo.com/*")
 config.set("colors.webpage.darkmode.enabled", True, "https://codeforces.com/*")
-

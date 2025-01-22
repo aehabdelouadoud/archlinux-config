@@ -20,6 +20,7 @@ name:
   rules: 
   me: 
   map: 
+  trash: 
 extension:
   norg: 
 filetype:

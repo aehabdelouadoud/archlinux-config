@@ -20,3 +20,4 @@ alias rg='rg --colors \'match:bg:yellow\' --colors \'match:fg:black\''
 
 alias z='zoxide'
 
+# alias rm='mv --backup=numbered -t ~/trash'

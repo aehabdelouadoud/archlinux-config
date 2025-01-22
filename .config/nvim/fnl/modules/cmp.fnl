@@ -46,6 +46,7 @@
                                          {:name :luasnip}
                                          {:name :buffer}
                                          {:name :path}
+                                         ; {:name :cmp_ai}
                                          {:name :spell
                                                 :option {:enable_in_context (fn [] true)
                                                 :keep_all_entries false

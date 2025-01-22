@@ -1,3 +1,4 @@
+(require :core.settings)
 (local lazy (require :lazy))
 
 (lazy.setup [ ;; Fennel support plugins
@@ -159,12 +160,11 @@
               ;                                 ╰─────────────╯
 
               {1 :hrsh7th/nvim-cmp
-                 :config (fn []
-                           (require :modules.cmp))
                  :dependencies [ :hrsh7th/cmp-buffer
                                  :hrsh7th/cmp-cmdline
                                  :hrsh7th/cmp-path
                                  :f3fora/cmp-spell
+                                 ; :tzachar/cmp-ai
                                  :hrsh7th/cmp-nvim-lsp-signature-help
                                  :neovim/nvim-lspconfig
                                  :hrsh7th/cmp-nvim-lsp
@@ -175,7 +175,11 @@
                                  :saadparwaiz1/cmp_luasnip
                                  :rafamadriz/friendly-snippets
                                  :onsails/lspkind.nvim]
-                 :event  :InsertEnter}
+                 :event  :InsertEnter
+                 :config (fn []
+                           (require :modules.cmp))}
+
+             ; {1 :tzachar/cmp-ai :dependencies :nvim-lua/plenary.nvim}
 
               ;                                  ╭──────────╮
               ;                                  │ Org Mode │
@@ -498,7 +502,6 @@
             {:checker {:enabled false}
             :install {:colorscheme [:gruvbox-material]}})
 
-(require :core.settings)
 (require :core.neovide)
 (require :core.mappings)
 (require :core.autocommands)
