@@ -125,3 +125,5 @@ config.set("downloads.location.directory", "~/downloads/browser/")
 # Set dark mode for specific websites
 config.set("colors.webpage.darkmode.enabled", True, "https://html.duckduckgo.com/*")
 config.set("colors.webpage.darkmode.enabled", True, "https://codeforces.com/*")
+
+config.source("./hidden.py");

@@ -5,6 +5,9 @@ export CHROME_EXECUTABLE="firefox"
 export ANDROID_HOME=/opt/android-sdk
 export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH"
 
+# pipx
+export PATH="$HOME/.local/bin:$PATH"
+
 # Luarocks
 export PATH="$HOME/.luarocks/bin/:$PATH"
 # Cargo

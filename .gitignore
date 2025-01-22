@@ -1,3 +1,4 @@
 .config/qutebrowser/quickmarks
 .config/nvim/lazy-lock.json
 .config/btop/btop.log
+.config/qutebrowser/hidden.py
