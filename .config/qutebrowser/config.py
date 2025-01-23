@@ -49,9 +49,16 @@ c.zoom.default     = "80%"
 config.source("./ui/themes/base16-gruvbox-material-dark-medium.config.py") # Set the theme.
 c.content.user_stylesheets = ['./ui/styles/gruvbox_material.css']
 
+# Change download dictionary
+config.set("downloads.location.directory", "~/downloads/browser/")
+
+# Set dark mode for specific websites
+config.set("colors.webpage.darkmode.enabled", True, "https://codeforces.com/*")
+config.set("colors.webpage.darkmode.enabled", True, "https://stackoverflow.com/*")
+
 # Adblocking
 c.content.blocking.enabled = True
-c.content.blocking.method = 'adblock'
+c.content.blocking.method = 'both'
 c.content.blocking.adblock.lists = [
     # General ad-blocking and privacy lists
     'https://easylist.to/easylist/easylist.txt',                          # EasyList: General ad-blocking rules
@@ -105,25 +112,18 @@ c.content.javascript.enabled = False
 config.set('content.javascript.enabled', True, 'file:///home/x/.config/qutebrowser/ui/dashboard/index.html')
 config.set('content.javascript.enabled', True, 'https://www.youtube.com')
 config.set('content.javascript.enabled', True, 'https://mail.proton.me')
-config.set('content.javascript.enabled', True, 'https://html.duckduckgo.com/html')
-config.set('content.javascript.enabled', True, 'https://chat.deepseek.com')
-config.set('content.javascript.enabled', True, 'https://chatgpt.com')
 config.set('content.javascript.enabled', True, 'https://www.reddit.com')
 config.set('content.javascript.enabled', True, 'https://fennel-lang.org/see')
 config.set('content.javascript.enabled', True, 'https://github.com/*')
+config.set('content.javascript.enabled', True, 'https://x.com/*')
+config.set('content.javascript.enabled', True, 'https://chat.deepseek.com/*')
+config.set('content.javascript.enabled', True, 'https://chatgpt.com/*')
+config.set('content.javascript.enabled', True, 'https://html.duckduckgo.com/*')
+config.set('content.javascript.enabled', True, 'https://duckduckgo.com/*')
 
 config.set('content.local_storage', True, 'https://mail.proton.me')
 config.set('content.register_protocol_handler', True, 'https://mail.proton.me#mailto=%25s')
 
-config.set('content.local_storage', True, 'https://chat.deepseek.com')
-config.set('content.local_storage', True, 'https://chatgpt.com')
-config.set('content.javascript.enabled', True, 'https://chatgpt.com')
+config.set('content.local_storage', True, 'https://chat.deepseek.com/*')
+config.set('content.local_storage', True, 'https://chatgpt.com/*')
 
-# Change download dictionary
-config.set("downloads.location.directory", "~/downloads/browser/")
-
-# Set dark mode for specific websites
-config.set("colors.webpage.darkmode.enabled", True, "https://html.duckduckgo.com/*")
-config.set("colors.webpage.darkmode.enabled", True, "https://codeforces.com/*")
-
-config.source("./hidden.py");

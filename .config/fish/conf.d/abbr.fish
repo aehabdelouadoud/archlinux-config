@@ -1,8 +1,13 @@
 abbr ..  'cd ..'
 abbr ... 'cd ../..'
 abbr -   'cd -'
+
 abbr gs 'git status -s'
 abbr gd 'git diff'
+abbr gc 'git commit -m'
+abbr gp 'git push'
+abbr gl 'git pull'
+
 abbr n 'neovide'
 abbr v 'vim'
 abbr m 'man'
@@ -10,6 +15,7 @@ abbr tw 'timew'
 abbr t 'task'
 abbr c 'clear'
 abbr q 'exit'
+abbr tare 'tar -xzvf'
 # abbr z 'zathura'
 
 abbr usvpn 'sudo openvpn --config  /etc/openvpn/client/us-free-3.protonvpn.udp.ovpn > /dev/null'
