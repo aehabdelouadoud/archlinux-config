@@ -1,0 +1,2 @@
+#!/bin/sh
+echo "$QUTE_URL" >> .progress.pi

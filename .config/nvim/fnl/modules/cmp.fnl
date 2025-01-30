@@ -39,7 +39,7 @@
                                                                     [:i :s])})
            ; Snippet expansion (using luasnip)
            :snippet [{:expand (fn [args]
-                                         ((. (require :luasnip) :lsp_expand) args.body))}]
+                                 ((. (require :luasnip) :lsp_expand) args.body))}]
            ; Completion sources configuration
            :sources (cmp.config.sources [{:name :nvim_lsp}
                                          ; {:name :copilot}

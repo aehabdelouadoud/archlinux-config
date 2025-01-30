@@ -10,8 +10,11 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Luarocks
 export PATH="$HOME/.luarocks/bin/:$PATH"
+
 # Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
+
+export PATH="$HOME/go/bin:$PATH"
 
 export EDITOR=vim
 

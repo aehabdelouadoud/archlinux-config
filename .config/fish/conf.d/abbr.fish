@@ -16,3 +16,6 @@ abbr q 'exit'
 
 abbr tare 'tar -xzvf'
 
+abbr up 'paru -Syu'
+
+abbr x11 'export QT_QPA_PLATFORM=xcb'

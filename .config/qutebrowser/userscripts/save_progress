@@ -1,0 +1,14 @@
+#!/bin/sh
+# Save URL with hint to progress file
+
+PROGRESS_FILE="$HOME/.progress.pi"
+
+# Get hint from qutebrowser prompt (passed as first argument)
+HINT="$1"
+URL="$QUTE_URL"
+
+# Append in "hint: url" format
+echo "$HINT: $URL" >> "$PROGRESS_FILE"
+
+# Optional: Show confirmation message
+echo "message-info 'Saved: $HINT ➔ $URL'" >> "$QUTE_FIFO"

@@ -12,7 +12,7 @@
 (set! spelllang [:en_us])	
 
 ;; Set the guifont option to the second font in the list
-(set! guifont (. fonts 1))
+(set! guifont (. fonts 5))
 
 ;; Enable true color support
 (set! termguicolors)
@@ -81,6 +81,9 @@
 (set! shiftwidth 2)
 (set! softtabstop 2)
 (set! expandtab true)
+
+
+(set! colorcolumn [80 100])
 
 ;; Insert-mode completion
 ;; (set+ :shortmess :c)

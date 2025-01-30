@@ -1,11 +1,13 @@
 #!/bin/bash
 
-target="Happy New Year!"
+target="I LOVE YOU!"
 target_length=${#target}
 
 generate_random_letter() {
   # change into following for simplicity / speed
   # printf "\\x$(printf %x $((RANDOM % 94 + 32)))"
+
+  sleep 0.03
 
   local random_byte
   random_byte=$(od -An -N1 -i /dev/random 2>/dev/null)
@@ -44,3 +46,4 @@ evolve_message() {
 evolve_message
 
 exit 0
+

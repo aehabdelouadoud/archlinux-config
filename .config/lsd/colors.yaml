@@ -1,0 +1,8 @@
+permission:
+  read: 2
+  write: 3
+  exec: 9
+date:
+  hour-old: 223
+  day-old: 222
+  older: 221

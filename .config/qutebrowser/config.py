@@ -17,44 +17,47 @@ c.colors.webpage.preferred_color_scheme = "dark"
 c.colors.webpage.darkmode.policy.images = "smart"
 
 # BINDINGS
-config.bind(",t",       "open -t")                                                        # Open new tab
-config.bind(",m",       "hint links spawn mpv --keep-open=yes {hint-url}")                # Play video via mpv
-config.bind(",M",       "hint links spawn yt-dlp {hint-url} -P ~/downloads/qutebrowser")  # Download video from youtube using yt-dlp
+config.bind(",m",       "hint links spawn mpv --keep-open=yes {hint-url}")
+config.bind(",M",       "hint links spawn yt-dlp {hint-url} -P ~/downloads/qutebrowser")
+config.bind(",p",       'hint links spawn umpv {hint-url}')
 
-config.bind(",T",       "spawn --userscript ~/.config/qutebrowser/scripts/translate.sh")  # Translate
-config.bind(",p",       "hint links spawn ~/.config/qutebrowser/scripts/umpv.sh {hint-url}")
+config.bind(",t",       'spawn --userscript translate')
+config.bind(",r",       'spawn --userscript log_rust_url')
+config.bind(',p',       'spawn --userscript save_progress {prompt:Hint/keywords:}')
 
 config.bind("<Ctrl+k>", "completion-item-focus prev", mode="command")
 config.bind("<Ctrl+j>", "completion-item-focus next", mode="command")
 
-config.bind(',k', 'spawn --userscript qute-pass --dmenu-invocation dmenu')
-config.bind(',K', 'spawn --userscript qute-pass --dmenu-invocation dmenu --password-only')
-
 # WEBSITES PERMISSIONS
-## Javascript
-config.set("content.javascript.clipboard", "access", "https://chat.openai.com/*") # In order to be able to copy answers.
-config.set("content.javascript.clipboard", "access", "https://github.com/*") # In order to be able to copy code...etc
-config.set("content.javascript.clipboard", "access", "https://discord.com/channels/@me/*") # In order to be able to copy code...etc
+## Enable Clipboard access for some websites
+config.set("content.javascript.clipboard", "access", "https://chat.openai.com/*")
+config.set("content.javascript.clipboard", "access", "https://github.com/*")
+config.set("content.javascript.clipboard", "access", "https://discord.com/channels/@me/*")
 
-# Audio capture & desktop capture
+## Enable Audio capture for some websites
 config.set("content.desktop_capture", True, "https://discord.com/*")
+## Enable desktop capture for some websites
 config.set("content.media.audio_capture", True, "https://discord.com/*")
 
 # UI
-c.scrolling.smooth = True    # Smooth scrolling for making eyes feeling better
-c.statusbar.show   = "never" # Never show statusbar
-c.tabs.show        = "never" # Never show tabs
+c.scrolling.smooth = True
+c.statusbar.show   = "never"
+c.tabs.show        = "never"
 c.scrolling.bar    = "never"
 c.zoom.default     = "80%"
-config.source("./ui/themes/base16-gruvbox-material-dark-medium.config.py") # Set the theme.
+config.source("./ui/themes/base16-gruvbox-material-dark-medium.config.py")
 c.content.user_stylesheets = ['./ui/styles/gruvbox_material.css']
 
 # Change download dictionary
-config.set("downloads.location.directory", "~/downloads/browser/")
+config.set("downloads.location.directory", "~/downloads/browser")
 
 # Set dark mode for specific websites
-config.set("colors.webpage.darkmode.enabled", True, "https://codeforces.com/*")
-config.set("colors.webpage.darkmode.enabled", True, "https://stackoverflow.com/*")
+config.set('colors.webpage.darkmode.enabled', True, 'https://codeforces.com/*')
+config.set('colors.webpage.darkmode.enabled', True, 'https://stackoverflow.com/*')
+config.set('colors.webpage.darkmode.enabled', True, 'https://dart.dev/*')
+config.set('colors.webpage.darkmode.enabled', True, 'https://docs.flutter.dev/*')
+
+config.set('content.javascript.enabled', True, '')
 
 # Adblocking
 c.content.blocking.enabled = True
@@ -88,7 +91,7 @@ c.content.blocking.adblock.lists = [
 ]
 
 # Never accept cookies for privacy reasons
-# c.content.cookies.accept = 'never'
+c.content.cookies.accept = 'never'
 
 # Set the "Do Not Track" header to prevent websites from tracking user activity
 c.content.headers.do_not_track = True
@@ -108,7 +111,7 @@ c.content.tls.certificate_errors = 'block'
 # Disable JavaScript globally for enhanced privacy and security
 c.content.javascript.enabled = False
 
-# Re-enable JavaScript for YouTube to ensure proper functionality of the site
+# Re-enable JavaScript
 config.set('content.javascript.enabled', True, 'file:///home/x/.config/qutebrowser/ui/dashboard/index.html')
 config.set('content.javascript.enabled', True, 'https://www.youtube.com')
 config.set('content.javascript.enabled', True, 'https://mail.proton.me')
@@ -116,14 +119,20 @@ config.set('content.javascript.enabled', True, 'https://www.reddit.com')
 config.set('content.javascript.enabled', True, 'https://fennel-lang.org/see')
 config.set('content.javascript.enabled', True, 'https://github.com/*')
 config.set('content.javascript.enabled', True, 'https://x.com/*')
+config.set('content.javascript.enabled', True, 'https://twitter.com/*')
 config.set('content.javascript.enabled', True, 'https://chat.deepseek.com/*')
 config.set('content.javascript.enabled', True, 'https://chatgpt.com/*')
 config.set('content.javascript.enabled', True, 'https://html.duckduckgo.com/*')
 config.set('content.javascript.enabled', True, 'https://duckduckgo.com/*')
+config.set('content.javascript.enabled', True, 'https://finance.yahoo.com/*')
+config.set('content.javascript.enabled', True, 'https://doc.rust-lang.org/stable/rust-by-example/*')
+config.set('content.javascript.enabled', True, 'https://dart.dev/*')
+config.set('content.javascript.enabled', True, 'https://docs.flutter.dev/*')
 
-config.set('content.local_storage', True, 'https://mail.proton.me')
-config.set('content.register_protocol_handler', True, 'https://mail.proton.me#mailto=%25s')
-
+# Enable local storage
+config.set('content.local_storage', True, 'https://mail.proton.me/*')
 config.set('content.local_storage', True, 'https://chat.deepseek.com/*')
 config.set('content.local_storage', True, 'https://chatgpt.com/*')
+
+config.set('content.register_protocol_handler', True, 'https://mail.proton.me#mailto=%25s')
 

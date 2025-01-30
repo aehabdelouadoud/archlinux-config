@@ -18,7 +18,7 @@
               ; Colorscheme
               :horanmustaplot/oxocarbon.nvim
               :sainnhe/gruvbox-material
-              ; :folke/tokyonight.nvim
+              :folke/tokyonight.nvim
               ; :akinsho/horizon.nvim
               ; :olimorris/onedarkpro.nvim
 
@@ -231,11 +231,11 @@
 
               ;; Language servers. ----------------------------------------------------------------------------------------------------------------------------
 
-              {1 :hinell/lsp-timeout.nvim
-                 :desc "Automatically start/stop idle/unused LSP servers; keeps RAM usage low. [https://github.com/hinell/lsp-timeout.nvim]"
-                 :dependencies :neovim/nvim-lspconfig
-                 :event        :VeryLazy
-                 :after        :neovim/nvim-lspconfig}
+              ; {1 :hinell/lsp-timeout.nvim
+              ;    :desc "Automatically start/stop idle/unused LSP servers; keeps RAM usage low. [https://github.com/hinell/lsp-timeout.nvim]"
+              ;    :dependencies :neovim/nvim-lspconfig
+              ;    :event        :VeryLazy
+              ;    :after        :neovim/nvim-lspconfig}
 
               {1 "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
                  :event :BufWinEnter}
@@ -482,6 +482,12 @@
 
              {1 :rcarriga/nvim-dap-ui
                 :dependencies [:mfussenegger/nvim-dap :nvim-neotest/nvim-nio]}
+
+             ; Color columns
+             {1 :Bekaboo/deadcolumn.nvim
+                :config true}
+             {1 :lukas-reineke/virt-column.nvim
+                :opts {}}
 
              ;{1 :Bekaboo/deadcolumn.nvim
              ;   :config true}
