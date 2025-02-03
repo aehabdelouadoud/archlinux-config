@@ -12,3 +12,4 @@ alias rg='rg --colors \'match:bg:yellow\' --colors \'match:fg:black\''
 
 alias z='zoxide'
 
+alias bag='kitty @ set-spacing padding=0 && bagels && kitty @ set-spacing padding=default'

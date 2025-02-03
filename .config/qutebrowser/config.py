@@ -112,9 +112,9 @@ c.content.tls.certificate_errors = 'block'
 c.content.javascript.enabled = False
 
 # Re-enable JavaScript
+config.set('content.javascript.enabled', True, 'https://mail.proton.me')
 config.set('content.javascript.enabled', True, 'file:///home/x/.config/qutebrowser/ui/dashboard/index.html')
 config.set('content.javascript.enabled', True, 'https://www.youtube.com')
-config.set('content.javascript.enabled', True, 'https://mail.proton.me')
 config.set('content.javascript.enabled', True, 'https://www.reddit.com')
 config.set('content.javascript.enabled', True, 'https://fennel-lang.org/see')
 config.set('content.javascript.enabled', True, 'https://github.com/*')
@@ -134,5 +134,6 @@ config.set('content.local_storage', True, 'https://mail.proton.me/*')
 config.set('content.local_storage', True, 'https://chat.deepseek.com/*')
 config.set('content.local_storage', True, 'https://chatgpt.com/*')
 
-config.set('content.register_protocol_handler', True, 'https://mail.proton.me#mailto=%25s')
+config.set('content.register_protocol_handler', True, 'https://mail.proton.me/*')
+config.set('content.cookies.accept', 'all', 'https://mail.proton.me/*')
 
