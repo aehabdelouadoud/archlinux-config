@@ -83,7 +83,7 @@
 (set! expandtab true)
 
 
-(set! colorcolumn [80 100])
+; (set! colorcolumn [80 100])
 
 ;; Insert-mode completion
 ;; (set+ :shortmess :c)
