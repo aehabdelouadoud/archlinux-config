@@ -6,6 +6,6 @@
                                           (tset (. vim.wo win)
                                                 :concealcursor
                                                 :c))}
-                :hybrid_modes [:n :i]
-                :modes [:n :no :c :i]})	
+                :preview {:hybrid_modes [:n :i]
+                          :modes [:n :no :c :i]}})	
 

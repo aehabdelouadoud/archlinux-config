@@ -1,10 +1,13 @@
-/* Hide scrollbar for all elements */
+/* Hide all scrollbars */
 ::-webkit-scrollbar {
-    display: none; /* Hide scrollbar */
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
 }
 
-/* Optional: Ensure the content is still scrollable */
-html, body {
+/* Disable scrollbar "bounce" effect on macOS */
+html {
+    overscroll-behavior: none !important;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* Internet Explorer/Edge */
 }

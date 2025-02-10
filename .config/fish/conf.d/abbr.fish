@@ -21,3 +21,5 @@ abbr up 'paru -Syu'
 abbr x11 'export QT_QPA_PLATFORM=xcb'
 
 abbr za 'zathura'
+
+abbr ytdlp 'yt-dlp -f bestaudio --extract-audio --audio-format flac -o "%(title)s.%(ext)s"'

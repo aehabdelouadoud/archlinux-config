@@ -128,14 +128,17 @@ config.set('content.javascript.enabled', True, 'https://finance.yahoo.com/*')
 config.set('content.javascript.enabled', True, 'https://doc.rust-lang.org/stable/rust-by-example/*')
 config.set('content.javascript.enabled', True, 'https://dart.dev/*')
 config.set('content.javascript.enabled', True, 'https://docs.flutter.dev/*')
+config.set('content.javascript.enabled', True, 'https://www.fiverr.com/*')
 
 # Enable local storage
 config.set('content.local_storage', True, 'https://mail.proton.me/*')
 config.set('content.local_storage', True, 'https://chat.deepseek.com/*')
-config.set('content.local_storage', True, 'https://chatgpt.com/*')
+config.set('content.local_storage', True, 'https://chat.deepseek.com/*')
+# config.set('content.local_storage', True, 'https://www.fiverr.com/*')
 
 config.set('content.register_protocol_handler', True, 'https://mail.proton.me/*')
 
 config.set('content.cookies.accept', 'all', 'https://mail.proton.me/*')
 config.set('content.cookies.accept', 'all', 'https://chat.deepseek.com/*')
+config.set('content.cookies.accept', 'all', 'https://www.youtube.com/*')
 
