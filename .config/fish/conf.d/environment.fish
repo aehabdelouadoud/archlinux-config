@@ -16,7 +16,12 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH="$HOME/go/bin:$PATH"
 
+# My own scripts
+export PATH="$HOME/dotfiles/scripts:$PATH"
+
 export EDITOR=vim
+
+export NOTES=$HOME/library/notes
 
 # Colorizing man pages
 set -g man_blink -o red

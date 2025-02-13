@@ -56,8 +56,7 @@ config.set('colors.webpage.darkmode.enabled', True, 'https://codeforces.com/*')
 config.set('colors.webpage.darkmode.enabled', True, 'https://stackoverflow.com/*')
 config.set('colors.webpage.darkmode.enabled', True, 'https://dart.dev/*')
 config.set('colors.webpage.darkmode.enabled', True, 'https://docs.flutter.dev/*')
-
-config.set('content.javascript.enabled', True, '')
+config.set('colors.webpage.darkmode.enabled', True, 'https://en.wikipedia.org/*')
 
 # Adblocking
 c.content.blocking.enabled = True
@@ -111,34 +110,69 @@ c.content.tls.certificate_errors = 'block'
 # Disable JavaScript globally for enhanced privacy and security
 c.content.javascript.enabled = False
 
-# Re-enable JavaScript
-config.set('content.javascript.enabled', True, 'https://mail.proton.me')
-config.set('content.javascript.enabled', True, 'file:///home/x/.config/qutebrowser/ui/dashboard/index.html')
-config.set('content.javascript.enabled', True, 'https://www.youtube.com')
-config.set('content.javascript.enabled', True, 'https://www.reddit.com')
-config.set('content.javascript.enabled', True, 'https://fennel-lang.org/see')
-config.set('content.javascript.enabled', True, 'https://github.com/*')
-config.set('content.javascript.enabled', True, 'https://x.com/*')
-config.set('content.javascript.enabled', True, 'https://twitter.com/*')
-config.set('content.javascript.enabled', True, 'https://chat.deepseek.com/*')
-config.set('content.javascript.enabled', True, 'https://chatgpt.com/*')
-config.set('content.javascript.enabled', True, 'https://html.duckduckgo.com/*')
-config.set('content.javascript.enabled', True, 'https://duckduckgo.com/*')
-config.set('content.javascript.enabled', True, 'https://finance.yahoo.com/*')
-config.set('content.javascript.enabled', True, 'https://doc.rust-lang.org/stable/rust-by-example/*')
-config.set('content.javascript.enabled', True, 'https://dart.dev/*')
-config.set('content.javascript.enabled', True, 'https://docs.flutter.dev/*')
-config.set('content.javascript.enabled', True, 'https://www.fiverr.com/*')
+# Define URL categories
+javascript_enabled = [
+    'https://mail.proton.me',
+    'file:///home/x/.config/qutebrowser/ui/dashboard/index.html',
+    'https://www.youtube.com',
+    'https://www.reddit.com',
+    'https://fennel-lang.org/see',
+    'https://github.com/*',
+    'https://x.com/*',
+    'https://twitter.com/*',
+    'https://chat.deepseek.com/*',
+    'https://chatgpt.com/*',
+    'https://html.duckduckgo.com/*',
+    'https://duckduckgo.com/*',
+    'https://finance.yahoo.com/*',
+    'https://doc.rust-lang.org/stable/rust-by-example/*',
+    'https://dart.dev/*',
+    'https://docs.flutter.dev/*',
+    'https://www.fiverr.com/*',
+    'https://accounts.google.com/*',
+    'https://www.google.com/*',
+    'https://search.yahoo.com/*',
+    'https://www.learnbyexample.org/*',
+    'https://gobyexample.com/*',
+    'https://www.wsj.com/*'
+    'https://github.com/*'
+    'https://www.amazon.com/*'
+    'https://www.aliexpress.com/*'
+]
 
-# Enable local storage
-config.set('content.local_storage', True, 'https://mail.proton.me/*')
-config.set('content.local_storage', True, 'https://chat.deepseek.com/*')
-config.set('content.local_storage', True, 'https://chat.deepseek.com/*')
-# config.set('content.local_storage', True, 'https://www.fiverr.com/*')
+local_storage_enabled = [
+    'https://mail.proton.me/*',
+    'https://chat.deepseek.com/*',
+    'https://finance.yahoo.com/*',
+    'https://chatgpt.com/*',
+    'https://www.wsj.com/*'
+    'https://www.aliexpress.com/*'
+    'https://www.amazon.com/*'
+]
+
+cookies_enabled = [
+    'https://mail.proton.me/*',
+    'https://chat.deepseek.com/*',
+    'https://www.youtube.com/*',
+    'https://accounts.google.com/*',
+    'https://finance.yahoo.com/*',
+    'https://chatgpt.com/*',
+    'https://github.com/*'
+    'https://www.wsj.com/*'
+    'https://www.amazon.com/*'
+    'https://www.aliexpress.com/*'
+]
+
+# Apply settings
+for url in javascript_enabled:
+    config.set('content.javascript.enabled', True, url)
+
+for url in local_storage_enabled:
+    config.set('content.local_storage', True, url)
+
+for url in cookies_enabled:
+    config.set('content.cookies.accept', 'all', url)
 
 config.set('content.register_protocol_handler', True, 'https://mail.proton.me/*')
-
-config.set('content.cookies.accept', 'all', 'https://mail.proton.me/*')
-config.set('content.cookies.accept', 'all', 'https://chat.deepseek.com/*')
-config.set('content.cookies.accept', 'all', 'https://www.youtube.com/*')
+config.set('content.blocking.whitelist', ['https://www.wsj.com'])
 

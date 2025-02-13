@@ -27,15 +27,3 @@
   "]"
 ] @lisp_punctuation_right.bracket
 
-;
-; [
-;   (string)
-;   (string_binding)
-; ] @string
-
-; [
-;   ")"
-;   "}"
-;   "]"
-; ] @comment
-

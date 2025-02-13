@@ -16,9 +16,9 @@
               ;                                     ╰────╯
 
               ; Colorscheme
-              :horanmustaplot/oxocarbon.nvim
               :sainnhe/gruvbox-material
-              :folke/tokyonight.nvim
+              ; :horanmustaplot/oxocarbon.nvim
+              ; :folke/tokyonight.nvim
               ; :akinsho/horizon.nvim
               ; :olimorris/onedarkpro.nvim
 

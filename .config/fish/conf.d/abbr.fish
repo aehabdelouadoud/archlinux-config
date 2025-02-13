@@ -22,4 +22,10 @@ abbr x11 'export QT_QPA_PLATFORM=xcb'
 
 abbr za 'zathura'
 
-abbr ytdlp 'yt-dlp -f bestaudio --extract-audio --audio-format flac -o "%(title)s.%(ext)s"'
+abbr ytdlpa 'yt-dlp -f bestaudio --extract-audio --audio-format flac -o "%(title)s.%(ext)s"'
+abbr ytdlpv 'yt-dlp -f \'bv*+ba/best\' -ciw --merge-output-format mp4'
+
+abbr nt '$EDITOR ~/library/notes/ -c \'execute "edit " input("New file name: ")\' && $EDITOR ~/library/notes/index.md'
+
+abbr movie 'lobster'
+abbr anime 'ani-cli'
