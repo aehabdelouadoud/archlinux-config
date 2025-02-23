@@ -23,6 +23,8 @@ export EDITOR=vim
 
 export NOTES=$HOME/library/notes
 
+export GOPATH=$HOME/.go
+
 # Colorizing man pages
 set -g man_blink -o red
 set -g man_bold -o cyan

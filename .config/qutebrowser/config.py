@@ -28,23 +28,12 @@ config.bind(',p',       'spawn --userscript save_progress {prompt:Hint/keywords:
 config.bind("<Ctrl+k>", "completion-item-focus prev", mode="command")
 config.bind("<Ctrl+j>", "completion-item-focus next", mode="command")
 
-# WEBSITES PERMISSIONS
-## Enable Clipboard access for some websites
-config.set("content.javascript.clipboard", "access", "https://chat.openai.com/*")
-config.set("content.javascript.clipboard", "access", "https://github.com/*")
-config.set("content.javascript.clipboard", "access", "https://discord.com/channels/@me/*")
-
-## Enable Audio capture for some websites
-config.set("content.desktop_capture", True, "https://discord.com/*")
-## Enable desktop capture for some websites
-config.set("content.media.audio_capture", True, "https://discord.com/*")
-
 # UI
 c.scrolling.smooth = True
 c.statusbar.show   = "never"
 c.tabs.show        = "never"
 c.scrolling.bar    = "never"
-c.zoom.default     = "80%"
+c.zoom.default     = "100%"
 config.source("./ui/themes/base16-gruvbox-material-dark-medium.config.py")
 c.content.user_stylesheets = ['./ui/styles/gruvbox_material.css']
 
@@ -102,7 +91,7 @@ c.content.headers.referer = 'same-domain'
 c.content.local_storage = False
 
 # Do not store cookies for the session, enhancing privacy
-c.content.cookies.store = True
+c.content.cookies.store = False
 
 # Block websites with invalid TLS certificates to prevent potential security risks
 c.content.tls.certificate_errors = 'block'
@@ -134,10 +123,19 @@ javascript_enabled = [
     'https://search.yahoo.com/*',
     'https://www.learnbyexample.org/*',
     'https://gobyexample.com/*',
-    'https://www.wsj.com/*'
-    'https://github.com/*'
-    'https://www.amazon.com/*'
-    'https://www.aliexpress.com/*'
+    'https://www.wsj.com/*',
+    'https://github.com/*',
+    'https://www.amazon.com/*',
+    'https://www.aliexpress.com/*',
+    'https://www.notion.so/*',
+    'https://finance.yahoo.com/*',
+    'https://www.wsj.com/*',
+    'https://www.marketwatch.com/*',
+    'https://www.cnbc.com/*',
+    'https://www.bloomberg.com/*',
+    'https://www.investopedia.com/*',
+    'https://www.marketwatch.com/*',
+    'https://www.deepl.com/*'
 ]
 
 local_storage_enabled = [
@@ -145,9 +143,12 @@ local_storage_enabled = [
     'https://chat.deepseek.com/*',
     'https://finance.yahoo.com/*',
     'https://chatgpt.com/*',
-    'https://www.wsj.com/*'
-    'https://www.aliexpress.com/*'
-    'https://www.amazon.com/*'
+    'https://www.wsj.com/*',
+    'https://www.aliexpress.com/*',
+    'https://www.amazon.com/*',
+    'https://www.notion.so/*'
+    'https://www.marketwatch.com/*'
+    'https://www.deepl.com/*'
 ]
 
 cookies_enabled = [
@@ -157,10 +158,33 @@ cookies_enabled = [
     'https://accounts.google.com/*',
     'https://finance.yahoo.com/*',
     'https://chatgpt.com/*',
-    'https://github.com/*'
-    'https://www.wsj.com/*'
-    'https://www.amazon.com/*'
-    'https://www.aliexpress.com/*'
+    'https://github.com/*',
+    'https://www.wsj.com/*',
+    'https://www.amazon.com/*',
+    'https://www.aliexpress.com/*',
+    'https://www.notion.so/*'
+    'https://www.marketwatch.com/*'
+    'https://www.deepl.com/*'
+]
+
+clipboard_enabled = [
+    'https://chatgpt.com/*',
+    'https://github.com/*',
+    'https://discord.com/channels/@me/*'
+    'https://www.notion.so/*'
+    'https://www.deepl.com/*'
+]
+
+whitelist_ads = [
+        'https://www.wsj.com',
+        'https://www.marketwatch.com',
+        'https://finance.yahoo.com',
+        'https://www.wsj.com',
+        'https://www.marketwatch.com',
+        'https://www.cnbc.com',
+        'https://www.bloomberg.com',
+        'https://www.investopedia.com',
+        'https://www.deepl.com/*'
 ]
 
 # Apply settings
@@ -173,6 +197,15 @@ for url in local_storage_enabled:
 for url in cookies_enabled:
     config.set('content.cookies.accept', 'all', url)
 
+for url in clipboard_enabled:
+    config.set('content.javascript.clipboard', "access", url)
+
+config.set('content.blocking.whitelist', whitelist_ads)
+
 config.set('content.register_protocol_handler', True, 'https://mail.proton.me/*')
-config.set('content.blocking.whitelist', ['https://www.wsj.com'])
+
+## Enable Audio capture for some websites
+config.set("content.desktop_capture", True, "https://discord.com/*")
+## Enable desktop capture for some websites
+config.set("content.media.audio_capture", True, "https://discord.com/*")
 

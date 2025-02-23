@@ -1,0 +1,37 @@
+# [Created by task 3.2.0 12/25/2024 16:02:36]
+data.location=/home/x/.task
+news.version=3.3.0
+
+# To use the default location of the XDG directories,
+# move this configuration file from ~/.taskrc to ~/.config/task/taskrc and update location config as follows:
+
+#data.location=~/.local/share/task
+#hooks.location=~/.config/task/hooks
+
+# Color theme (uncomment one to use)
+#include light-16.theme
+#include light-256.theme
+#include bubblegum-256.theme
+#include dark-16.theme
+#include dark-256.theme
+#include dark-red-256.theme
+#include dark-green-256.theme
+#include dark-blue-256.theme
+#include dark-violets-256.theme
+#include dark-yellow-green.theme
+#include dark-gray-256.theme
+#include dark-gray-blue-256.theme
+#include solarized-dark-256.theme
+#include solarized-light-256.theme
+#include no-color.theme
+
+recurrence.confirmation=no
+gc=on
+urgency.user.tag.family.coefficient=5.0
+urgency.user.tag.later.coefficient=-6.0
+urgency.user.project.Reading.coefficient=5.0
+urgency.user.project.1337.coefficient=7.0
+
+# include dark-16.theme       # Use the 16 terminal colors
+# include dark-gray-256.theme # Pure minimalist
+include dark-blue-256.theme

@@ -11,6 +11,7 @@ MENU="bemenu \
     --bdr '#32302F' \
     --ignorecase \
     -p '󰌆 ' -l 10 --border=0 \
+    -R 2 \
     --fn 'FiraCode Nerd Font 9'"
 
 PASSWORD_STORE_DIR="${PASSWORD_STORE_DIR:-$HOME/.password-store}"

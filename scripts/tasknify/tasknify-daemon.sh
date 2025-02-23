@@ -2,7 +2,7 @@
 
 PIDFILE="$HOME/.tasknify.pid"
 LOGFILE="$HOME/.tasknify.log"
-SLEEP_DURATION=2000
+SLEEP_DURATION=100
 
 # Ensure only one instance runs
 if [ -f "$PIDFILE" ]; then
@@ -24,3 +24,5 @@ while true; do
   # Wait 30 minutes
   sleep "$SLEEP_DURATION"
 done
+
+rm "$PIDFILE"
