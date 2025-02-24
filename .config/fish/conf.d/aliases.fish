@@ -17,3 +17,5 @@ alias bag='kitty @ set-spacing padding=0 && bagels && kitty @ set-spacing paddin
 alias cat='bat --theme=base16'
 
 alias nv="kitty @ set-spacing padding=0 && nvim && kitty @ set-spacing padding=default"
+
+# alias cd="echo \"Try to use z instead ...\""

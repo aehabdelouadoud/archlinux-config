@@ -1,0 +1,3 @@
+[submodule "scripts/hyprcast"]
+	path = scripts/hyprcast
+	url = git@github.com:aehabdelouadoud/hyprcast.git

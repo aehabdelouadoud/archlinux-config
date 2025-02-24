@@ -17,7 +17,8 @@
 
               ; Colorscheme
               :sainnhe/gruvbox-material
-              ; :horanmustaplot/oxocarbon.nvim
+              :aehabdelouadoud/oxocarbon.nvim
+              :aehabdelouadoud/nebulae.nvim
               ; :folke/tokyonight.nvim
               ; :akinsho/horizon.nvim
               ; :olimorris/onedarkpro.nvim
@@ -488,6 +489,8 @@
                 :config true}
              {1 :lukas-reineke/virt-column.nvim
                 :opts {}}
+
+             :derektata/lorem.nvim
 
              ;{1 :Bekaboo/deadcolumn.nvim
              ;   :config true}
