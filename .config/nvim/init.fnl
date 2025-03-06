@@ -17,11 +17,8 @@
 
               ; Colorscheme
               :sainnhe/gruvbox-material
-              :aehabdelouadoud/oxocarbon.nvim
+              ; :aehabdelouadoud/oxocarbon.nvim
               :aehabdelouadoud/nebulae.nvim
-              ; :folke/tokyonight.nvim
-              ; :akinsho/horizon.nvim
-              ; :olimorris/onedarkpro.nvim
 
               {1 :nvim-lualine/lualine.nvim
                  :dependencies :nvim-tree/nvim-web-devicons
@@ -490,7 +487,16 @@
              {1 :lukas-reineke/virt-column.nvim
                 :opts {}}
 
-             :derektata/lorem.nvim
+             {1 :derektata/lorem.nvim
+                :config (fn []
+                          ((. (require :lorem) :opts) {:comma_chance 0.2
+                                                      :max_commas_per_sentence 2
+                                                      :sentenceLength :medium}))}
+
+            {1 :monkoose/neocodeium
+               :config (fn [] (local neocodeium (require :neocodeium)) (neocodeium.setup)
+                       (vim.keymap.set :i :<A-c> neocodeium.accept))
+               :event :VeryLazy}
 
              ;{1 :Bekaboo/deadcolumn.nvim
              ;   :config true}

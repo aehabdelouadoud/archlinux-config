@@ -9,6 +9,7 @@
 (vim.api.nvim_set_hl 0 "@tag" {:fg "#D8A657"})
 (vim.api.nvim_set_hl 0 "@string" {:fg "#D6B593"})
 (vim.api.nvim_set_hl 0 "@macro" {:fg "#7DAEA3"})
+
 ; (vim.api.nvim_set_hl 0 "@variable" {:fg "#EAA159"})
 ; (vim.api.nvim_set_hl 0 "NeoTreeNormalNC" {:fg "#32302F"})
 ; (vim.api.nvim_set_hl 0 "NeoTreeNormal" {:fg "#32302F"})
