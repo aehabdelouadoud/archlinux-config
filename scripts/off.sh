@@ -10,14 +10,14 @@ MENU="bemenu \
     --cb '#a9b665' --cf '#EA6962' \
     --bdr '#32302F' \
     --ignorecase \
-    -p '󰌆 ' -l 10 --border=0 \
+    -p ' ' -l 10 --border=0 \
     -R 2 \
     --fn 'FiraCode Nerd Font 9'"
 
 choice=$(echo -e "Lock screen\nSleep\nTurn off" | eval "$MENU")
 
 case "$choice" in
-"Lock screen") i3lock ;;
+"Lock screen") hyprlock ;;
 "Sleep") systemctl suspend ;;
 "Turn off")
   confirm=$(echo -e "No\nYes" | eval "$MENU" -p "Are you sure? ")
@@ -27,5 +27,4 @@ case "$choice" in
     notify-send "Shutdown canceled."
   fi
   ;;
-*) echo "No valid option selected." ;;
 esac
