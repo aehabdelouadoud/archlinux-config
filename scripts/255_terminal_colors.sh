@@ -11,8 +11,7 @@ print_color_block() {
 for i in {0..255}; do
   print_color_block $i
   # Print a newline every 16 colors
-  if (( (i + 1) % 16 == 0 )); then
+  if (((i + 1) % 16 == 0)); then
     echo
   fi
 done
-
