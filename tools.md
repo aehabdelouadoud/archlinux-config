@@ -1,15 +1,3 @@
-# Tools
-## Productivity
-- bagels
-- taskwarrior
-- 
-
-## Security
-- bandwhich
-
-## 
-
-
-## Dev tools
-### Speed
-- flamelens
+1. tldr
+2. man
+3. 
