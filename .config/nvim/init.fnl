@@ -21,7 +21,8 @@
 :aehabdelouadoud/nebulae.nvim
 
 {1 :nvim-lualine/lualine.nvim
-   :dependencies :nvim-tree/nvim-web-devicons
+   :dependencies [:nvim-tree/nvim-web-devicons
+                  :ofseed/copilot-status.nvim ]
    :event        :VeryLazy
    :init         (fn []
                    (require :modules.lualine))}
@@ -113,10 +114,7 @@
    :config true
    :event  :InsertEnter}	
 
-{1 :smoka7/hop.nvim
- :config (fn []
-           ((. (require :hop) :setup) {:keys :etovxqpdygfblzhckisuran}))
- :tag "*"}
+{1 :smoka7/hop.nvim :opts {:keys :etovxqpdygfblzhckisuran} :version "*"}
 
 {1 :smoka7/multicursors.nvim
    :cmd [:MCstart :MCvisual :MCclear :MCpattern :MCvisualPattern :MCunderCursor]
@@ -436,31 +434,31 @@
                                          :max_commas_per_sentence 2
                                          :sentenceLength :medium}))}
 
-{1 :yetone/avante.nvim
-   :build :make
-   :dependencies [:nvim-treesitter/nvim-treesitter
-                  :stevearc/dressing.nvim
-                  :nvim-lua/plenary.nvim
-                  :MunifTanjim/nui.nvim
-                  :nvim-tree/nvim-web-devicons
-                  :zbirenbaum/copilot.lua
-                  {1 :HakonHarnes/img-clip.nvim
-                   :event :VeryLazy
-                   :opts {:default {:drag_and_drop {:insert_mode true}
-                                    :embed_image_as_base64 false
-                                    :prompt_for_file_name false
-                                    :use_absolute_path true}}}
-                  {1 :MeanderingProgrammer/render-markdown.nvim
-                     :ft [:markdown :Avante]
-                     :opts {:file_types [:markdown :Avante]}}]
-   :event :VeryLazy
-   :lazy false
-   :opts {:provider :deepseek
-          :vendors {:deepseek {:__inherited_from :openai
-                               :api_key_name :DEEPSEEK_API_KEY
-                               :endpoint "https://api.deepseek.com"
-                               :model :deepseek-coder}}}
-   :version false}
+; {1 :yetone/avante.nvim
+;    :build :make
+;    :dependencies [:nvim-treesitter/nvim-treesitter
+;                   :stevearc/dressing.nvim
+;                   :nvim-lua/plenary.nvim
+;                   :MunifTanjim/nui.nvim
+;                   :nvim-tree/nvim-web-devicons
+;                   :zbirenbaum/copilot.lua
+;                   {1 :HakonHarnes/img-clip.nvim
+;                    :event :VeryLazy
+;                    :opts {:default {:drag_and_drop {:insert_mode true}
+;                                     :embed_image_as_base64 false
+;                                     :prompt_for_file_name false
+;                                     :use_absolute_path true}}}
+;                   {1 :MeanderingProgrammer/render-markdown.nvim
+;                      :ft [:markdown :Avante]
+;                      :opts {:file_types [:markdown :Avante]}}]
+;    :event :VeryLazy
+;    :lazy false
+;    :opts {:provider :deepseek
+;           :vendors {:deepseek {:__inherited_from :openai
+;                                :api_key_name :DEEPSEEK_API_KEY
+;                                :endpoint "https://api.deepseek.com"
+;                                :model :deepseek-coder}}}
+;    :version false}
 
 {1 :lukas-reineke/virt-column.nvim
    :opts {:char "│"}}
@@ -490,7 +488,8 @@
 {1 :f-person/git-blame.nvim
    :config true}
 
-; :github/copilot.vim
+{1 :github/copilot.vim
+   :event [:BufNewFile :BufReadPost]}
 
 ; :hsanson/vim-android
 
@@ -519,8 +518,6 @@
 ;    :version "*"
 ;    :opts    {:symbol "│"}; │
 ;    :event   :BufReadPost}
-
-; {1 :zbirenbaum/copilot.lua :cmd :Copilot :event :InsertEnter}	
 
 ; {1 :zbirenbaum/copilot.lua
 ;    :cmd :Copilot
