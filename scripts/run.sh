@@ -14,9 +14,9 @@ MENU="bemenu \
     -R 2 \
     --fn 'FiraCode Nerd Font 9'"
 
-find /usr/share/applications ~/.local/share/applications -name "*.desktop" \
-               | xargs grep -E '^Name=' \
-               | cut -d= -f2 \
-               | sort -u \
-               | eval "$MENU" \
-               | xargs -I {} sh -c 'gtk-launch $(basename "$(grep -ril "Name={}" /usr/share/applications ~/.local/share/applications)")'
+find /usr/share/applications ~/.local/share/applications -name "*.desktop" |
+  xargs grep -E '^Name=' |
+  cut -d= -f2 |
+  sort -u |
+  eval "$MENU" |
+  xargs -I {} sh -c "gtk-launch $(basename "$(grep -ril "Name={}" /usr/share/applications ~/.local/share/applications)")"
