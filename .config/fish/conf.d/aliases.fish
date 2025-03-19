@@ -15,6 +15,7 @@ alias z='zoxide'
 alias bag='kitty @ set-spacing padding=0 && bagels && kitty @ set-spacing padding=default'
 
 alias cat='bat --theme=base16'
+alias bat='bat --theme=base16'
 
 alias nv="kitty @ set-spacing padding=0 && nvim && kitty @ set-spacing padding=default"
 
