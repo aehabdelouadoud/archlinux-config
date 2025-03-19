@@ -490,7 +490,7 @@
 {1 :f-person/git-blame.nvim
    :config true}
 
-; :github/copilot.vim
+:github/copilot.vim
 
 ; :hsanson/vim-android
 
@@ -519,8 +519,6 @@
 ;    :version "*"
 ;    :opts    {:symbol "│"}; │
 ;    :event   :BufReadPost}
-
-; {1 :zbirenbaum/copilot.lua :cmd :Copilot :event :InsertEnter}	
 
 ; {1 :zbirenbaum/copilot.lua
 ;    :cmd :Copilot
