@@ -1,6 +1,6 @@
-# fxnvim
+# Fxnvim
 
-**Description**: A neovim configurations written in fennel aims to be as good as possible.
+**Description**: A Neovim configurations written in fennel aims to be as good as possible.
 
 > Time = Money
 > Neovim with good configurations = Speed = Saving time = ?
@@ -34,10 +34,10 @@ git clone --depth 1 git@github.com:horanmustaplot/fxnvim.git ~/.config/nvim
 git clone --depth 1 https://github.com/horanmustaplot/fxnvim.git ~/.config/nvim 
 ```
 
-##### faq
+##### FAQ
 
 1. Why did you choose Fennel over Lua? 
-- I have fun configuring with fennel more than lua.
+- I have fun configuring with fennel more than Lua.
 
 2. Can I customize this configuration?
 - I guess :)!

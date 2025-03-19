@@ -11,7 +11,7 @@
 
   (set vim.g.neovide_fullscreen      false)
   (set vim.g.neovide_cursor_vfx_mode :pixiedust)
-  (set vim.g.neovide_hide_mouse_when_typing false)
+  (set vim.g.neovide_hide_mouse_when_typing true)
 
 (local set-padding
   (fn [top left right bottom]

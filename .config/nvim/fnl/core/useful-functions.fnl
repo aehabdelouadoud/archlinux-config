@@ -8,3 +8,4 @@
                      (local char (vim.fn.nr2char i))
                      (local line (.. char " 0x" hex "  \n"))
                      (vim.api.nvim_put [line] :l true true)))))
+

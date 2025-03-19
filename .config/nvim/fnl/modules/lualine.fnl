@@ -43,7 +43,8 @@
                  :disabled_filetypes {:statusline [ "dashboard"
                                                     "alpha"
                                                     "oil"
-                                                    "neo-tree" ]}}})
+                                                    "neo-tree"
+                                                    "leetcode.nvim" ]}}})
 
 (fn ins-left [component] (table.insert config.sections.lualine_c component))
 

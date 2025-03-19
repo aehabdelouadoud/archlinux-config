@@ -82,6 +82,9 @@
 (set! softtabstop 2)
 (set! expandtab true)
 
+; cc
+(set! cc [80])
+
 
 ; (set! colorcolumn [80 100])
 

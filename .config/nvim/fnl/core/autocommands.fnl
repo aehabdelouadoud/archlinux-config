@@ -10,7 +10,7 @@
                              {:callback (fn [] (local floating
                                                  (not= (. (vim.api.nvim_win_get_config 0) :relative) ""))
                                               (vim.diagnostic.config {:virtual_lines (not floating)
-                                                                      :virtual_text floating}))})	
+                                                                      :virtual_text floating}))})
 
 ; Disable folding in some buffers ex: Neotree.
 (vim.api.nvim_create_autocmd :FileType
@@ -18,7 +18,7 @@
                                           ((. (require :ufo) :detach))
                                           (set vim.opt_local.foldenable false)
                                           (set vim.opt_local.foldcolumn :0))
-                              :pattern [:nvcheatsheet :neo-tree :aerial]})
+                              :pattern [:nvcheatsheet :neo-tree :aerial :leetcode.nvim]})
 
 ; Disable line number in some file types.
 (vim.api.nvim_create_autocmd :FileType
@@ -53,7 +53,26 @@
     (vim.api.nvim_create_autocmd :WinEnter {:callback set-lsp-lines})))
 (sync-lsp-lines-on-split-change)	; lsp-lines
 
+; Disable colorcolumn for a specfic filetype
+(vim.api.nvim_create_autocmd :FileType
+                             {:callback (fn []
+                                          (set vim.opt_local.colorcolumn ""))
+                              :pattern [:markdown
+                                        :text
+                                        :json 
+                                        :dashboard 
+                                        :lazy 
+                                        :mason 
+                                        :neeotree 
+                                        :leetcode.nvim
+                                        :aerial
+                                        :nvcheatsheet
+                                        :oil 
+                                        :fennel]})
+
 ; Enable normal mode in inactive
+
+; TODO: Fix this one
 
 ; (set vim.o.updatetime 2000)
 ; (vim.api.nvim_create_autocmd :FileType
@@ -63,3 +82,16 @@
 ;                                                                         :callback (fn []
 ;                                                                                     (vim.cmd :stopinsert))}))
 ;                               :pattern [:toggleterm :fennel]})	
+
+; Experimental
+
+(vim.api.nvim_create_autocmd :User
+                             {:callback (fn []
+                                          ((. (require :dropbar.api) :toggle) false))
+                              :pattern :ZenMode
+                              :callback :On_open})
+(vim.api.nvim_create_autocmd :User
+                             {:callback (fn []
+                                          ((. (require :dropbar.api) :toggle) true))
+                              :pattern :ZenMode
+                              :callback :On_close})	
