@@ -5,7 +5,7 @@
                          :color4   "#a89984"
                          :blue   "#7daea3"
                          :green  "#a9b665"
-                         :orange "#d8a657"
+                         :yellow "#d8a657"
                          :violet "#d3869b"
                          :cyan   "#8ec07c"
                          :red    "#ea6962"
@@ -22,6 +22,7 @@
                               (and (and gitdir (> (length gitdir) 0))
                                    (< (length gitdir) (length filepath))))
        :hide_in_width (fn [] (> (vim.fn.winwidth 0) 80))})
+
 (local config { 
        :inactive_sections {:lualine_a {}
                            :lualine_b {}
@@ -40,11 +41,23 @@
                  :section_separators   ""
                  :theme {:inactive {:c {:bg colors.bg :fg colors.fg}}
                          :normal   {:c {:bg colors.bg :fg colors.fg}}}
-                 :disabled_filetypes {:statusline [ "dashboard"
-                                                    "alpha"
-                                                    "oil"
-                                                    "neo-tree"
-                                                    "leetcode.nvim" ]}}})
+                 :disabled_filetypes {:statusline [ :dashboard
+                                                    :alpha
+                                                    :oil
+                                                    :neo-tree
+                                                    :leetcode.nvim
+                                                    :man
+                                                    :quickfix
+                                                    :neo-tree
+                                                    :symbols-outline
+                                                    :aerial
+                                                    :fugitive
+                                                    :nvim-dap-ui
+                                                    :mason
+                                                    :mundo
+                                                    :lazy
+                                                    :trouble
+                                                    :toggleterm]}}})
 
 (fn ins-left [component] (table.insert config.sections.lualine_c component))
 
@@ -127,6 +140,36 @@
 ;  :cond conditions.hide_in_width
 ;  :fmt string.upper}
 ;
+
+            ; {
+            ;     "copilot",
+            ;     show_running = true,
+            ;     symbols = {
+            ;         status = {
+            ;             enabled = " ",
+            ;             disabled = " ",
+            ;         },
+            ;     },
+            ; },
+
+; (ins-right {1 (fn [] (.. "")) 
+;               :color {:fg colors.yellow}
+;               :cond  (not conditions.copilot)})
+
+
+; (ins-left {1 :filename
+;           :color {:fg colors.magenta :gui :bold}
+;           :symbols {
+;                 :modified ""; 
+;                 :readonly ""; 
+;                 :unnamed ""
+;                 :newfile ""}
+;           :cond conditions.buffer_not_empty})
+
+(ins-right {1 :copilot
+              :color {:fg colors.yellow}
+              :symbols {:enabled " " :disabled " "}})
+
 (ins-right {1 (fn [] (.. " " (vim.fn.line "$"))) 
               :color {:fg colors.blue}
               :cond  conditions.buffer_not_empty})
