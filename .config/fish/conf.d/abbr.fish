@@ -29,3 +29,12 @@ abbr nt '$EDITOR ~/library/notes/ -c \'execute "edit " input("New file name: ")\
 
 abbr movie 'lobster'
 abbr anime 'ani-cli'
+
+abbr ta 'task add ""'
+
+abbr sioyek 'QT_QPA_PLATFORM=xcb sioyek'
+
+abbr -a forloop 'for i in (seq -w 0 10)
+    # command
+end'
+
