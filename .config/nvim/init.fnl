@@ -17,8 +17,6 @@
 
               ; Colorscheme
               :sainnhe/gruvbox-material
-              ; :aehabdelouadoud/oxocarbon.nvim
-              :aehabdelouadoud/nebulae.nvim
 
               {1 :nvim-lualine/lualine.nvim
                  :dependencies :nvim-tree/nvim-web-devicons
@@ -54,11 +52,6 @@
 
               ;{1 :stevearc/dressing.nvim
               ;   :event :VeryLazy}
-
-              {1 :echasnovski/mini.indentscope
-                 :version "*"
-                 :opts    {:symbol "│"}; │
-                 :event   :BufReadPost}
 
               {1 :luukvbaal/statuscol.nvim
                  :Lazy false
@@ -213,7 +206,7 @@
                                 :nvim-tree/nvim-web-devicons]
                  :lazy false
                  :config (fn []
-                           (require :modules.markview))}	
+                           (require :modules.markview))}
 
               ;; mason-lspconfig. ---------------------------------------------------------------------------------------------------------------
               {1 :williamboman/mason-lspconfig.nvim
@@ -309,48 +302,48 @@
                     :symbols {:commit "*" :merge_commit :M}}}	
 
              {1 :SuperBo/fugit2.nvim
-                  :cmd [:Fugit2 :Fugit2Diff :Fugit2Graph]
-                  :dependencies [:MunifTanjim/nui.nvim
-                                  :nvim-tree/nvim-web-devicons
-                                  :nvim-lua/plenary.nvim
-                                  {1 :chrisgrieser/nvim-tinygit
+                :cmd [:Fugit2 :Fugit2Diff :Fugit2Graph]
+                :dependencies [:MunifTanjim/nui.nvim
+                               :nvim-tree/nvim-web-devicons
+                               :nvim-lua/plenary.nvim
+                               {1 :chrisgrieser/nvim-tinygit
                                   :dependencies [:stevearc/dressing.nvim]}]
-                  :keys [{1 :<leader>f 2 :<cmd>Fugit2<cr> :mode :n :desc "Open Fugit2 GUI"}] ;TODO: add A better dsc
-                  :opts {:width 150
-                         :height 30}}	
+                 :keys [{1 :<leader>f 2 :<cmd>Fugit2<cr> :mode :n :desc "Open Fugit2 GUI"}] ;TODO: add A better dsc
+                 :opts {:width 150
+                        :height 30}}	
 
-              {1 :kevinhwang91/nvim-ufo
-                 :dependencies :kevinhwang91/promise-async
-                 :config (fn []
-                           (require :modules.ufo))}
-              {1 :LudoPinelli/comment-box.nvim
-                    :Lazy :VeryLazy}
+             {1 :kevinhwang91/nvim-ufo
+                :dependencies :kevinhwang91/promise-async
+                :config (fn []
+                          (require :modules.ufo))}
+             {1 :LudoPinelli/comment-box.nvim
+                   :Lazy :VeryLazy}
 
-              {1 :nvim-orgmode/orgmode
-                 :config (fn []
-                            ((. (require :orgmode) :setup) {:org_agenda_files "~/orgfiles/**/*"
-                                                           :org_default_notes_file "~/orgfiles/refile.org"}))
-                 :event :VeryLazy
-                 :ft   [:org]}
+             {1 :nvim-orgmode/orgmode
+                :config (fn []
+                           ((. (require :orgmode) :setup) {:org_agenda_files "~/orgfiles/**/*"
+                                                          :org_default_notes_file "~/orgfiles/refile.org"}))
+                :event :VeryLazy
+                :ft   [:org]}
 
-              {1 :nvim-neorg/neorg
+             {1 :nvim-neorg/neorg
                  :lazy false
                  :version "*"
                  :config (fn [] ((. (require :neorg) :setup) {:load {:core.concealer {:config {:icon_preset :varied}} :core.defaults {}}}))}
 
-              {1 :akinsho/flutter-tools.nvim
+             {1 :akinsho/flutter-tools.nvim
                  :config true
                  :dependencies [:nvim-lua/plenary.nvim :stevearc/dressing.nvim]
                  :lazy false}	
 
-              ; {1 :nvim-neo-tree/neo-tree.nvim 
-              ;    :Lazy :VeryLazy
-              ;    :branch :v3.x
-              ;    :dependencies [:nvim-lua/plenary.nvim
-              ;                                 :nvim-tree/nvim-web-devicons
-              ;                                 :MunifTanjim/nui.nvim]
-              ;    :config (fn []
-              ;              (require :modules.neo-tree))}
+             ; {1 :nvim-neo-tree/neo-tree.nvim 
+             ;    :Lazy :VeryLazy
+             ;    :branch :v3.x
+             ;    :dependencies [:nvim-lua/plenary.nvim
+             ;                                 :nvim-tree/nvim-web-devicons
+             ;                                 :MunifTanjim/nui.nvim]
+             ;    :config (fn []
+             ;              (require :modules.neo-tree))}
 
              ; {1 :nvimdev/lspsaga.nvim
              ;    :Event :LspAttach
@@ -358,7 +351,7 @@
              ;    :dependencies [:nvim-treesitter/nvim-treesitter
              ;                   :nvim-tree/nvim-web-devicons]}
 
-              {1 :Bekaboo/dropbar.nvim
+             {1 :Bekaboo/dropbar.nvim
                  :dependencies {1 :nvim-telescope/telescope-fzf-native.nvim :build :make}}	
 
              {1 :asiryk/auto-hlsearch.nvim
@@ -426,11 +419,6 @@
              {1 :rcarriga/nvim-notify
                 :config true}
 
-             {1 :xeluxee/competitest.nvim
-                :config (fn []
-                          ((. (require :competitest) :setup)))
-                :dependencies :MunifTanjim/nui.nvim}
-
              {1 :arminveres/md-pdf.nvim
                 :branch :main
                 :keys [{1 "<leader>,"
@@ -463,12 +451,6 @@
              {1 :fedepujol/move.nvim :opts {}}
              {1 :mrcjkb/rustaceanvim :lazy false :version :^5}
 
-             ; {1 :zbirenbaum/copilot.lua :cmd :Copilot :event :InsertEnter}	
-
-             ; {1 :zbirenbaum/copilot-cmp
-             ;    :config (fn []
-             ;             ((. (require :copilot_cmp) :setup)))}
-
              {1 :nvim-flutter/flutter-tools.nvim
                 :config true
                 :dependencies [:nvim-lua/plenary.nvim :stevearc/dressing.nvim]
@@ -482,21 +464,87 @@
                 :dependencies [:mfussenegger/nvim-dap :nvim-neotest/nvim-nio]}
 
              ; Color columns
-             {1 :Bekaboo/deadcolumn.nvim
-                :config true}
-             {1 :lukas-reineke/virt-column.nvim
-                :opts {}}
+            {1 :Bekaboo/deadcolumn.nvim
+               :config true}
 
-             {1 :derektata/lorem.nvim
-                :config (fn []
-                          ((. (require :lorem) :opts) {:comma_chance 0.2
+            {1 :lukas-reineke/virt-column.nvim
+               :opts {}}
+
+            {1 :derektata/lorem.nvim
+               :config (fn []
+                         ((. (require :lorem) :opts) {:comma_chance 0.2
                                                       :max_commas_per_sentence 2
                                                       :sentenceLength :medium}))}
 
-            {1 :monkoose/neocodeium
-               :config (fn [] (local neocodeium (require :neocodeium)) (neocodeium.setup)
-                       (vim.keymap.set :i :<A-c> neocodeium.accept))
-               :event :VeryLazy}
+            {1 :yetone/avante.nvim
+               :build :make
+               :dependencies [:nvim-treesitter/nvim-treesitter
+                              :stevearc/dressing.nvim
+                              :nvim-lua/plenary.nvim
+                              :MunifTanjim/nui.nvim
+                              :nvim-tree/nvim-web-devicons
+                              :zbirenbaum/copilot.lua
+                              {1 :HakonHarnes/img-clip.nvim
+                               :event :VeryLazy
+                               :opts {:default {:drag_and_drop {:insert_mode true}
+                                                :embed_image_as_base64 false
+                                                :prompt_for_file_name false
+                                                :use_absolute_path true}}}
+                              {1 :MeanderingProgrammer/render-markdown.nvim
+                                 :ft [:markdown :Avante]
+                                 :opts {:file_types [:markdown :Avante]}}]
+               :event :VeryLazy
+               :lazy false
+               :opts {:provider :deepseek
+                      :vendors {:deepseek {:__inherited_from :openai
+                                           :api_key_name :DEEPSEEK_API_KEY
+                                           :endpoint "https://api.deepseek.com"
+                                           :model :deepseek-coder}}}
+               :version false}
+
+             ; {1 :lukas-reineke/indent-blankline.nvim :main :ibl 
+             ;    :opts {:char "|"
+             ;           :highlight [:Function :Label]
+             ;           :priority 2
+             ;           :repeat_linebreak false
+             ;           :smart_indent_cap true
+             ;           :tab_char [:a :b :c]}}
+
+             ; {1 :zbirenbaum/copilot.lua :cmd :Copilot :event :InsertEnter}	
+
+             ; {1 :zbirenbaum/copilot-cmp
+             ;    :config (fn []
+             ;             ((. (require :copilot_cmp) :setup)))}
+
+             {1 :echasnovski/mini.indentscope
+                :version "*"
+                :opts    {:symbol "│"}; │
+                :event   :BufReadPost}
+
+             {1 :kawre/leetcode.nvim
+                :build ":TSUpdate html"
+                :dependencies [:nvim-telescope/telescope.nvim
+                             :nvim-lua/plenary.nvim
+                             :MunifTanjim/nui.nvim]
+                :opts {}}
+
+             {1 :xeluxee/competitest.nvim
+                :config (fn []
+                          ((. (require :competitest) :setup)))
+                :dependencies :MunifTanjim/nui.nvim}
+             
+             ; {1 :zbirenbaum/copilot.lua
+             ;    :cmd :Copilot
+             ;    :config (fn []
+             ;              ((. (require :copilot) :setup) {}))
+             ;    :event :InsertEnter}	
+
+             :github/copilot.vim
+
+             ; {1 :monkoose/neocodeium
+             ;    :config (fn [] (local neocodeium (require :neocodeium)) (neocodeium.setup)
+             ;            (vim.keymap.set :i :<A-c> neocodeium.accept))
+             ;    :event :VeryLazy}
 
              ;{1 :Bekaboo/deadcolumn.nvim
              ;   :config true}

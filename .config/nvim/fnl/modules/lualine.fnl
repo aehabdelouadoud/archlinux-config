@@ -49,9 +49,9 @@
 
 (fn ins-right [component] (table.insert config.sections.lualine_x component))
 
-; (ins-left {1 (fn [] "▊")
-;           :color {:fg colors.fg2}
-;           :padding {:left 0 :right 1}})
+(ins-left {1 (fn [] "▊")
+          :color {:fg colors.fg2}
+          :padding {:left 0 :right 1}})
 
 (ins-left {1 (fn [] "󰣇")
           :color (fn []
@@ -130,15 +130,15 @@
               :color {:fg colors.blue}
               :cond  conditions.buffer_not_empty})
 
-; (ins-right {1 "o:encoding"
-;               :color {:fg colors.green :gui :bold}
-;               :cond  conditions.hide_in_width
-;               :fmt   string.upper})
+(ins-right {1 "o:encoding"
+              :color {:fg colors.green :gui :bold}
+              :cond  conditions.hide_in_width
+              :fmt   string.upper})
 
-; (ins-right {1 :fileformat
-;               :color         {:fg colors.green :gui :bold}
-;               :fmt           string.upper
-;               :icons_enabled false})
+(ins-right {1 :fileformat
+              :color         {:fg colors.green :gui :bold}
+              :fmt           string.upper
+              :icons_enabled false})
 
 (ins-right {1 :branch :color {:fg colors.violet :gui :bold} :icon ""}) ;     
 
@@ -149,7 +149,7 @@
                            :removed  {:fg colors.red}}
               :symbols {:added " " :modified "󰝤 " :removed " "}})
 
-; (ins-right {1 (fn [] "▊") :color {:fg colors.fg2} :padding {:left 1}})
+(ins-right {1 (fn [] "▊") :color {:fg colors.fg2} :padding {:left 1}})
 
 (lualine.setup config)	
 

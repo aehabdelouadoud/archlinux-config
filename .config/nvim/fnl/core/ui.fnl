@@ -14,3 +14,4 @@
 ; (vim.api.nvim_set_hl 0 "NeoTreeNormalNC" {:fg "#32302F"})
 ; (vim.api.nvim_set_hl 0 "NeoTreeNormal" {:fg "#32302F"})
 ; (vim.api.nvim_set_hl 0 "@lisp_punctuation_left.bracket" {:fg "#D2A256"})
+

@@ -7,5 +7,6 @@
                                                 :concealcursor
                                                 :c))}
                 :preview {:hybrid_modes [:n :i]
+                          :icon_provider "mini"
                           :modes [:n :no :c :i]}})	
 

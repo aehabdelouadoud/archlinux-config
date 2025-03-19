@@ -53,3 +53,13 @@
     (vim.api.nvim_create_autocmd :WinEnter {:callback set-lsp-lines})))
 (sync-lsp-lines-on-split-change)	; lsp-lines
 
+; Enable normal mode in inactive
+
+; (set vim.o.updatetime 2000)
+; (vim.api.nvim_create_autocmd :FileType
+;                              {:callback (fn []
+;                                           (vim.api.nvim_create_autocmd :CursorHoldI
+;                                                                        {:buffer 0
+;                                                                         :callback (fn []
+;                                                                                     (vim.cmd :stopinsert))}))
+;                               :pattern [:toggleterm :fennel]})	

@@ -9,7 +9,8 @@
 (map! [:n] "<Leader>m" ":Maximize<CR>" "Toggle maximizing split")
 (map! [:n] "<Leader>z" ":ZenMode<CR>" "Toggle Zen Mode")
 (map! [:n] "<Leader>r" ":RunCode<CR>" "Run code")
-(map! [:n] "<leader>t" ":ToggleTerm direction=float<CR>" "Toggle floating terminal")
+; (map! [:n] "<leader>t" ":ToggleTerm direction=float<CR>" "Toggle floating terminal")
+(map! [:n] "<leader>t" ":ToggleTerm<CR>" "Toggle floating terminal")
 
 ; (map! [:n] "<localleader>s" ":sp<CR>" "Open horizontal split")
 ; (map! [:n] "<localleader>w" ":vs<CR>" "Open vertical split")
