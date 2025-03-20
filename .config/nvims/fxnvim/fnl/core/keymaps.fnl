@@ -9,6 +9,7 @@
 (map! [:n] "<C-m>" ":Maximize<CR>" "Toggle maximizing split")
 (map! [:n] "<Leader>z" ":ZenMode<CR>" "Toggle Zen Mode")
 (map! [:n] "<Leader>r" ":RunCode<CR>" "Run code")
+
 ; (map! [:n] "<leader>t" ":ToggleTerm direction=float<CR>" "Toggle floating terminal")
 (map! [:n] "<leader>t" ":ToggleTerm<CR>" "Toggle floating terminal")
 
@@ -72,7 +73,7 @@
 (vim.keymap.set :n "<Leader>;" dropbar-api.pick
                 {:desc "Pick symbols in winbar"})	
 
-; (map! [:n] "<Leader>;" ":lua require(\"dropbar.api\").pick()<CR>"  "Pick symbols in winbar")
+(map! [:n] "<Leader>;" ":lua require(\"dropbar.api\").pick()<CR>"  "Pick symbols in winbar")
 
 ; (vim.keymap.set :n "[;" dropbar-api.goto_context_start
 ;                 {:desc "Go to start of current context"})
@@ -100,10 +101,10 @@
 ; (map! [:n] "<CTRL><CR>" ":EasyColor<CR>" "Color Picker")
 
 ; Some keybindings for normal mode.
-; (vim.api.nvim_set_keymap :i :<C-l> :<Right> {:noremap true :silent true})
-; (vim.api.nvim_set_keymap :i :<C-h> :<Left> {:noremap true :silent true})
-; (vim.api.nvim_set_keymap :i :<C-k> :<UP> {:noremap true :silent true})
-; (vim.api.nvim_set_keymap :i :<C-j> :<DOWN> {:noremap true :silent true})
+(vim.api.nvim_set_keymap :i :<C-l> :<Right> {:noremap true :silent true})
+(vim.api.nvim_set_keymap :i :<C-h> :<Left> {:noremap true :silent true})
+(vim.api.nvim_set_keymap :i :<C-k> :<UP> {:noremap true :silent true})
+(vim.api.nvim_set_keymap :i :<C-j> :<DOWN> {:noremap true :silent true})
 ; (vim.api.nvim_set_keymap :i :<C-BS> :<C-w> {:noremap true :silent true})
 ; (vim.api.nvim_set_keymap :i :<C-a> :<Home> {:noremap true :silent true})
 ; (vim.api.nvim_set_keymap :i :<C-e> :<End> {:noremap true :silent true})	

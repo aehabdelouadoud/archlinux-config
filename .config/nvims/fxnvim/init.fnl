@@ -1,16 +1,21 @@
 (require :core.settings)
 (local lazy (require :lazy))
 
-(lazy.setup [ ;; Fennel support plugins
+(lazy.setup [
+;                                  ╭──────────────╮
+;                                  │ Core Plugins │
+;                                  ╰──────────────╯
 
+[
 {1 :udayvir-singh/tangerine.nvim
-   :desc "Tangerine provides a painless way to add fennel to your config - https://github.com/udayvir-singh/tangerine.nvim"
-   :lazy false
+   :desc     "Tangerine provides a painless way to add fennel to your config - https://github.com/udayvir-singh/tangerine.nvim"
+   :lazy     false
    :priority 1000}
 
 {1 :udayvir-singh/hibiscus.nvim
-   :desc "Highly opinionated macros to elegantly write your neovim config - https://github.com/udayvir-singh/hibiscus.nvim"
+   :desc  "Highly opinionated macros to elegantly write your neovim config - https://github.com/udayvir-singh/hibiscus.nvim"
    :event :VeryLazy}
+]
 
 ;                                     ╭────╮
 ;                                     │ UI │
@@ -30,9 +35,8 @@
 {1 :folke/noice.nvim
    :dependencies [{1 :MunifTanjim/nui.nvim
                      :event :VeryLazy}]
-   :config       (fn []
-                   (require :modules.noice))
-   :event        :VeryLazy}
+   :config (fn [] (require :modules.noice))
+   :event  :VeryLazy}
 
 {1 :nvimdev/dashboard-nvim
    :dependencies  [:nvim-tree/nvim-web-devicons
@@ -40,27 +44,23 @@
                       :event :VeryLazy
                       :config true}]
    :event :VimEnter
-   :config (fn []
-             (require :modules.dashboard))}
+   :config (fn [] (require :modules.dashboard))}
 
 {1 :stevearc/oil.nvim
    :dependencies [{1 :echasnovski/mini.icons :opts {}}]
-   :config       (fn []
-                   (require :modules.oil))
+   :config       (fn [] (require :modules.oil))
    :cmd          :Oil}
 
 {1 :luukvbaal/statuscol.nvim
    :Lazy false
-   :config (fn []
-             (require :modules.statuscol))}
+   :config (fn [] (require :modules.statuscol))}
 
 ;                              ╭───────────────────╮
 ;                              │ Useful utilities. │
 ;                              ╰───────────────────╯
 
 {1 :kylechui/nvim-surround
-   :config (fn []
-             ((. (require :nvim-surround) :setup) {}))
+   :config (fn [] ((. (require :nvim-surround) :setup) {}))
    :event :VeryLazy
    :version "*"}
 
@@ -80,6 +80,7 @@
 {1 :RRethy/vim-illuminate
 :config (fn []
           (require :modules.vim-illuminate))}
+
 :folke/which-key.nvim
 
 {1 :akinsho/toggleterm.nvim
@@ -138,8 +139,7 @@
                    ; Telescope extensions
                    {1 :nvim-telescope/telescope-project.nvim
                       :event :VeryLazy}]
-   :config (fn []
-             (require :modules.telescope))}
+   :config (fn [] (require :modules.telescope))}
 
 ;                                 ╭─────────────╮
 ;                                 │ Completion. │
@@ -162,8 +162,7 @@
                    :rafamadriz/friendly-snippets
                    :onsails/lspkind.nvim]
    :event  :InsertEnter
-   :config (fn []
-             (require :modules.cmp))}
+   :config (fn [] (require :modules.cmp))}
 
 ;                                  ╭──────────╮
 ;                                  │ Org Mode │
@@ -175,24 +174,26 @@
          :MarkmapSave
          :MarkmapWatch
          :MarkmapWatchStop]
-   :config (fn [_ opts]
-              ((. (require :markmap) :setup) opts))
+   :config (fn [_ opts] ((. (require :markmap) :setup) opts))
    :opts {:grace_period 3600000
           :hide_toolbar false
           :html_output  :/tmp/markmap.html}}	
 
-[{1 :iamcco/markdown-preview.nvim
+[
+{1 :iamcco/markdown-preview.nvim
   :build ":cal mkdp#util#install()"
   :cmd [:MarkdownPreviewToggle :MarkdownPreview :MarkdownPreviewStop]
   :ft [:markdown]}
+
  {1 :parsifa1/markdown-typmath.nvim
-  :config (fn []
-            ((. (require :typmath) :setup)))
+  :config (fn [] ((. (require :typmath) :setup)))
   :enabled false
   :ft :markdown}
+
  {1 :MeanderingProgrammer/render-markdown.nvim
   :ft [:markdown :Avante]
-  :opts {:file_types [:markdown :Avante]}}]
+  :opts {:file_types [:markdown :Avante]}}
+]
 
 
 ; {1 :OXY2DEV/markview.nvim
@@ -207,8 +208,7 @@
                       :event :VeryLazy}]
    :after [ :williamboman/mason.nvim]
    :even  :VeryLazy
-   :config (fn []
-             (require :modules.mason-lspconfig))}
+   :config (fn [] (require :modules.mason-lspconfig))}
 
 ;; Language servers.
 
@@ -227,8 +227,7 @@
 
 {1 :nvim-treesitter/nvim-treesitter
    :build  ":TSUpdate"
-   :config (fn []
-             (require :modules.treesitter))
+   :config (fn [] (require :modules.treesitter))
    :event  :BufWinEnter}	
 
 ;                                ╭──────────────╮
@@ -403,10 +402,10 @@
    :lazy false}
 
 ;; Debugging
-:mfussenegger/nvim-dap
-:rcarriga/nvim-dap-ui
-:jay-babu/mason-nvim-dap.nvim
-:Weissle/persistent-breakpoints.nvim
+; :mfussenegger/nvim-dap
+; :rcarriga/nvim-dap-ui
+; :jay-babu/mason-nvim-dap.nvim
+; :Weissle/persistent-breakpoints.nvim
 
 {1 :stevearc/aerial.nvim
    :dependencies [:nvim-treesitter/nvim-treesitter :nvim-tree/nvim-web-devicons]
@@ -425,14 +424,82 @@
    :config (fn []
              ((. (require :android-nvim) :setup)))}	
 
-{1 :rcarriga/nvim-dap-ui
-   :dependencies [:mfussenegger/nvim-dap :nvim-neotest/nvim-nio]}
-
 {1 :derektata/lorem.nvim
    :config (fn []
             ((. (require :lorem) :opts) {:comma_chance 0.2
                                          :max_commas_per_sentence 2
                                          :sentenceLength :medium}))}
+
+{1 :lukas-reineke/virt-column.nvim
+   :opts {:char "│"}}
+
+{1 :lukas-reineke/indent-blankline.nvim
+   :main :ibl 
+   :opts {:indent { :char "│" }
+          :exclude {:filetypes ["dashboard"
+                                "leetcode.nvim"
+                                "fennel"]}}}
+
+{1 :kawre/leetcode.nvim
+   :build ":TSUpdate html"
+   :dependencies [:nvim-telescope/telescope.nvim
+                :nvim-lua/plenary.nvim
+                :MunifTanjim/nui.nvim]
+   :opts {:theme {:normal {:fg "#CCAD8D"}}}}
+
+{1 :xeluxee/competitest.nvim
+   :config (fn [] ((. (require :competitest) :setup)))
+   :dependencies :MunifTanjim/nui.nvim}
+
+{1 :github/copilot.vim
+   :event [:BufNewFile :BufReadPost]}
+
+{1 :f-person/git-blame.nvim
+   :config true}
+
+{1 :mfussenegger/nvim-dap
+   :lazy false
+   :config (fn [] (require :modules.nvim-dap))
+   :dependencies [:rcarriga/nvim-dap-ui :theHamsta/nvim-dap-virtual-text]
+   :ft [:cpp]
+   :keys [{1 :<F8>
+           2 (fn []
+               ((. (require :dap) :toggle_breakpoint)))
+           :desc "Debug: Toggle breakpoint"}
+          {1 :<F9>
+           2 (fn []
+               ((. (require :dap) :continue)))
+           :desc "Debug: Continue"}
+          {1 :<F10>
+           2 (fn []
+               ((. (require :dap) :step_into)))
+           :desc "Debug: Step into"}
+          {1 :<F11>
+           2 (fn []
+               ((. (require :dap) :step_over)))
+           :desc "Debug: Step over"}
+          {1 :<F12>
+           2 (fn []
+               ((. (require :dap) :step_out)))
+           :desc "Debug: Step out"}
+          {1 :<leader>db
+           2 (fn []
+               ((. (require :dap) :set_breakpoint) (vim.fn.input "Breakpoint condition: ")))
+           :desc "Set breakpoint"}
+          {1 :<leader>dp
+           2 (fn []
+               ((. (require :dap) :set_breakpoint) nil nil
+                                                   (vim.fn.input "Log point message: ")))
+           :desc "Set log point"}
+          {1 :<leader>dr
+           2 (fn []
+               ((. (require :dap) :repl :toggle)))
+           :desc "Toggle REPL"}
+          {1 :<leader>dl
+           2 (fn []
+               ((. (require :dap) :run_last)))
+           :desc "Run last"}]
+   :specs [:nvim-neotest/nvim-nio]}	
 
 ; {1 :yetone/avante.nvim
 ;    :build :make
@@ -460,36 +527,10 @@
 ;                                :model :deepseek-coder}}}
 ;    :version false}
 
-{1 :lukas-reineke/virt-column.nvim
-   :opts {:char "│"}}
-
-{1 :lukas-reineke/indent-blankline.nvim
-   :main :ibl 
-   :opts {:indent { :char "│" }
-          :exclude {:filetypes ["dashboard"
-                                "leetcode.nvim"
-                                "fennel"]}}}
-
-{1 :kawre/leetcode.nvim
-   :build ":TSUpdate html"
-   :dependencies [:nvim-telescope/telescope.nvim
-                :nvim-lua/plenary.nvim
-                :MunifTanjim/nui.nvim]
-   :opts {:theme {:normal {:fg "#CCAD8D"}}}}
-
-{1 :xeluxee/competitest.nvim
-   :config (fn []
-             ((. (require :competitest) :setup)))
-   :dependencies :MunifTanjim/nui.nvim}
-
-{1 :rcarriga/nvim-dap-ui
-   :dependencies [:mfussenegger/nvim-dap :nvim-neotest/nvim-nio]}
-
-{1 :f-person/git-blame.nvim
-   :config true}
-
-{1 :github/copilot.vim
-   :event [:BufNewFile :BufReadPost]}
+; [{1 :FabijanZulj/blame.nvim
+;   :config (fn []
+;             ((. (require :blame) :setup) {}))
+;   :lazy false}]	
 
 ; :hsanson/vim-android
 

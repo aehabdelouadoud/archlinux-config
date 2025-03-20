@@ -95,3 +95,7 @@
                                           ((. (require :dropbar.api) :toggle) true))
                               :pattern :ZenMode
                               :callback :On_close})	
+
+; Preserve Folds When Entering Command Mode
+(vim.api.nvim_create_autocmd :CmdlineEnter {:command "normal! zx" :pattern "*"})	
+

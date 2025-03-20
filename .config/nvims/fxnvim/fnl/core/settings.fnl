@@ -85,6 +85,9 @@
 ; cc
 (set! cc [80])
 
+(set vim.g.gitblame_ignored_filetypes [:oil])	
+; (vim.opt.foldopen:remove :all)
+; (vim.opt.foldopen:remove :command)
 
 ; (set! colorcolumn [80 100])
 

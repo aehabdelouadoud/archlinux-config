@@ -28,6 +28,7 @@
 (vim.api.nvim_set_hl 0 "@string"                         {:fg retrofire.base04})
 (vim.api.nvim_set_hl 0 "@macro"                          {:fg retrofire.base0D})
 (vim.api.nvim_set_hl 0 "@function.builtin.asm"           {:fg retrofire.base0A})
+(vim.api.nvim_set_hl 0 "DashboardHeader"                 {:fg retrofire.base04})
 
 ; (vim.api.nvim_set_hl 0 "@variable" {:fg "#EAA159"})
 ; (vim.api.nvim_set_hl 0 "NeoTreeNormalNC" {:fg "#32302F"})

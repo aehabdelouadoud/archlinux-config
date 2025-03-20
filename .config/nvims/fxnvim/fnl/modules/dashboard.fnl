@@ -97,4 +97,4 @@
                            :header headers.fxnvim}
                            :theme :doom})
 
-(vim.cmd "hi DashboardHeader guifg=#D2BD97")
+
