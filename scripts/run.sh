@@ -14,9 +14,21 @@ MENU="bemenu \
     -R 2 \
     --fn 'FiraCode Nerd Font 9'"
 
-find /usr/share/applications ~/.local/share/applications -name "*.desktop" -print0 |
+# Get list of applications
+apps=$(find /usr/share/applications ~/.local/share/applications -name "*.desktop" -print0 |
   xargs -0 grep -E '^Name=' |
   cut -d= -f2 |
-  sort -u |
-  eval "$MENU" |
-  xargs -I {} sh -c "gtk-launch $(basename "$(grep -ril "Name={}" /usr/share/applications ~/.local/share/applications)")"
+  sort -u)
+
+# Show menu and get user selection
+selected_app=$(echo "$apps" | eval "$MENU")
+
+# Find and launch the selected application
+if [[ -n "$selected_app" ]]; then
+  desktop_file=$(grep -ril "^Name=$selected_app" /usr/share/applications ~/.local/share/applications | head -n 1)
+  if [[ -n "$desktop_file" ]]; then
+    gtk-launch "$(basename "$desktop_file" .desktop)"
+  else
+    notify-send "Error" "Application not found!"
+  fi
+fi
