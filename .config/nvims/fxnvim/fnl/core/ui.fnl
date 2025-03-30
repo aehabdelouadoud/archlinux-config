@@ -30,6 +30,17 @@
 (vim.api.nvim_set_hl 0 "@function.builtin.asm"           {:fg retrofire.base0A})
 (vim.api.nvim_set_hl 0 "DashboardHeader"                 {:fg retrofire.base04})
 
+(vim.api.nvim_set_hl 0 "RenderMarkdownH1Bg" {:fg retrofire.base04 :bg retrofire.base0A :blend 50})
+(vim.api.nvim_set_hl 0 "RenderMarkdownH2Bg" {:fg retrofire.base04 :bg retrofire.base0A :blend 50})
+(vim.api.nvim_set_hl 0 "RenderMarkdownH3Bg" {:fg retrofire.base04 :bg retrofire.base0A :blend 50})
+(vim.api.nvim_set_hl 0 "RenderMarkdownH4Bg" {:fg retrofire.base04 :bg retrofire.base0A :blend 50})
+(vim.api.nvim_set_hl 0 "RenderMarkdownH5Bg" {:fg retrofire.base04 :bg retrofire.base0A :blend 50})
+(vim.api.nvim_set_hl 0 "RenderMarkdownH6Bg" {:fg retrofire.base04 :bg retrofire.base0A :blend 50})
+
+; (vim.api.nvim_set_hl 0 "DiffAdd" {:fg retrofire.base04 :bg retrofire.base0A :blend 50})
+
+
+; (vim.api.nvim_set_hl 0 "NormalSB"                 {:bg "#504945"})
 ; (vim.api.nvim_set_hl 0 "@variable" {:fg "#EAA159"})
 ; (vim.api.nvim_set_hl 0 "NeoTreeNormalNC" {:fg "#32302F"})
 ; (vim.api.nvim_set_hl 0 "NeoTreeNormal" {:fg "#32302F"})

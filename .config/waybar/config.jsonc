@@ -49,10 +49,10 @@
     "battery",
     "custom/r_end",
 
-    "custom/l_end",
+    // "custom/l_end",
     // "hyprland/language",
-    "custom/power",
-    "custom/r_end",
+    // "custom/power",
+    // "custom/r_end",
 
     "custom/padd"
   ],

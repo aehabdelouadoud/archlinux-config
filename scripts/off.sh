@@ -14,12 +14,12 @@ MENU="bemenu \
     -R 2 \
     --fn 'FiraCode Nerd Font 9'"
 
-choice=$(echo -e "Lock screen\nSleep\nTurn off" | eval "$MENU")
+choice=$(echo -e "Lock screen\nSleep\nPower Off" | eval "$MENU")
 
 case "$choice" in
 "Lock screen") hyprlock ;;
 "Sleep") systemctl suspend ;;
-"Turn off")
+"Power Off")
   confirm=$(echo -e "No\nYes" | eval "$MENU" -p "Are you sure? ")
   if [ "$confirm" = "Yes" ]; then
     systemctl poweroff

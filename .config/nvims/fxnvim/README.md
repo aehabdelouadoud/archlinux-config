@@ -42,4 +42,3 @@ git clone --depth 1 https://github.com/horanmustaplot/fxnvim.git ~/.config/nvim
 2. Can I customize this configuration?
 - I guess :)!
 
-

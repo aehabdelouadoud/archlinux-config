@@ -24,6 +24,8 @@
 ; Colorscheme
 :sainnhe/gruvbox-material
 :aehabdelouadoud/nebulae.nvim
+:nyoom-engineering/oxocarbon.nvim
+:folke/tokyonight.nvim
 
 {1 :nvim-lualine/lualine.nvim
    :dependencies [:nvim-tree/nvim-web-devicons
@@ -112,7 +114,7 @@
    :event  :VeryLazy}
 
 {1 :windwp/nvim-autopairs
-   :config true
+   :opts {:check_ts true}
    :event  :InsertEnter}	
 
 {1 :smoka7/hop.nvim :opts {:keys :etovxqpdygfblzhckisuran} :version "*"}
@@ -179,21 +181,26 @@
           :hide_toolbar false
           :html_output  :/tmp/markmap.html}}	
 
-[
-{1 :iamcco/markdown-preview.nvim
-  :build ":cal mkdp#util#install()"
-  :cmd [:MarkdownPreviewToggle :MarkdownPreview :MarkdownPreviewStop]
-  :ft [:markdown]}
+{1 :MeanderingProgrammer/render-markdown.nvim
+   :even  :VeryLazy
+   :dependencies [:nvim-treesitter/nvim-treesitter :echasnovski/mini.nvim]
+   :opts {}}
 
- {1 :parsifa1/markdown-typmath.nvim
-  :config (fn [] ((. (require :typmath) :setup)))
-  :enabled false
-  :ft :markdown}
-
- {1 :MeanderingProgrammer/render-markdown.nvim
-  :ft [:markdown :Avante]
-  :opts {:file_types [:markdown :Avante]}}
-]
+; [
+; {1 :iamcco/markdown-preview.nvim
+;   :build ":cal mkdp#util#install()"
+;   :cmd [:MarkdownPreviewToggle :MarkdownPreview :MarkdownPreviewStop]
+;   :ft [:markdown]}
+;
+;  {1 :parsifa1/markdown-typmath.nvim
+;   :config (fn [] ((. (require :typmath) :setup)))
+;   :enabled false
+;   :ft :markdown}
+;
+;  {1 :MeanderingProgrammer/render-markdown.nvim
+;   :ft [:markdown :Avante]
+;   :opts {:file_types [:markdown :Avante]}}
+; ]
 
 
 ; {1 :OXY2DEV/markview.nvim
@@ -445,7 +452,8 @@
    :dependencies [:nvim-telescope/telescope.nvim
                 :nvim-lua/plenary.nvim
                 :MunifTanjim/nui.nvim]
-   :opts {:theme {:normal {:fg "#CCAD8D"}}}}
+   :opts {:theme {:normal {:fg "#CCAD8D"}}
+          :image_support false}}
 
 {1 :xeluxee/competitest.nvim
    :config (fn [] ((. (require :competitest) :setup)))
@@ -453,6 +461,12 @@
 
 {1 :github/copilot.vim
    :event [:BufNewFile :BufReadPost]}
+
+{1 :CopilotC-Nvim/CopilotChat.nvim
+   :build "make tiktoken"
+   :dependencies [[:github/copilot.vim]
+                  {1 :nvim-lua/plenary.nvim :branch :master}]
+   :opts {}}
 
 {1 :f-person/git-blame.nvim
    :config true}
@@ -500,6 +514,46 @@
                ((. (require :dap) :run_last)))
            :desc "Run last"}]
    :specs [:nvim-neotest/nvim-nio]}	
+
+{1 :v1nh1shungry/cppman.nvim
+   :cmd :Cppman
+   :dependencies [:nvim-telescope/telescope.nvim :folke/snacks.nvim]
+   :opts {}}	
+
+{1 :nvim-telescope/telescope-ui-select.nvim
+   :config true}
+
+; :aehabdelouadoud/nvim-calc
+
+{1 :josephburgess/nvumi
+ :dependencies [:folke/snacks.nvim]
+ :opts {:custom_conversions {}
+        :custom_functions {}
+        :date_format :iso
+        :keys {:reset :R :run :<CR> :yank :<leader>y :yank_all :<leader>Y}
+        :prefix " 🚀 "
+        :virtual_text :newline}}
+
+{1 :mcauley-penney/visual-whitespace.nvim :config true}
+
+{1 :2kabhishek/nerdy.nvim :cmd :Nerdy :dependencies [:folke/snacks.nvim]}
+
+; {1 :folke/snacks.nvim
+;    :lazy false
+;    :opts {:bigfile {:enabled true}
+;           :dashboard {:enabled false}
+;           :input {:enabled true}
+;           :explorer {:enabled true}
+;           :indent {:enabled true}
+;           :input {:enabled true}
+;           :notifier {:enabled true}
+;           :picker {:enabled true}
+;           :quickfile {:enabled true}
+;           :scope {:enabled true}
+;           :scroll {:enabled true}
+;           :statuscolumn {:enabled true}
+;           :words {:enabled true}}
+;    :priority 1000}
 
 ; {1 :yetone/avante.nvim
 ;    :build :make

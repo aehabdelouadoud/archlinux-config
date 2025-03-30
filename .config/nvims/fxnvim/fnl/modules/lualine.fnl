@@ -57,6 +57,7 @@
                                                     :mundo
                                                     :lazy
                                                     :trouble
+                                                    :leetcode.nvim
                                                     :toggleterm]}}})
 
 (fn ins-left [component] (table.insert config.sections.lualine_c component))

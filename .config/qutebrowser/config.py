@@ -18,7 +18,7 @@ c.colors.webpage.darkmode.policy.images = "smart"
 
 # BINDINGS
 config.bind(",m",       "hint links spawn mpv --keep-open=yes {hint-url}")
-config.bind(",M",       "hint links spawn yt-dlp {hint-url} -P ~/downloads/qutebrowser")
+config.bind(",M",       "hint links spawn yt-dlp {hint-url} -P ~/downs/qutebrowser")
 config.bind(",p",       'hint links spawn umpv {hint-url}')
 
 config.bind(",t",       'spawn --userscript translate')
@@ -33,12 +33,12 @@ c.scrolling.smooth = True
 c.statusbar.show   = "never"
 c.tabs.show        = "never"
 c.scrolling.bar    = "never"
-c.zoom.default     = "100%"
+c.zoom.default     = "80%"
 config.source("./ui/themes/base16-gruvbox-material-dark-medium.config.py")
 c.content.user_stylesheets = ['./ui/styles/gruvbox_material.css']
 
 # Change download dictionary
-config.set("downloads.location.directory", "~/downloads/browser")
+config.set("downloads.location.directory", "~/downs/qutebrowser")
 
 # Set dark mode for specific websites
 config.set('colors.webpage.darkmode.enabled', True, 'https://codeforces.com/*')

@@ -69,6 +69,10 @@
 (map! [:v] "<A-k>" ":MoveBlock -1<CR>" "Move block Up")
 (map! [:v] "<A-j>" ":MoveBlock 1<CR>"  "Move block Down")
 
+(map! [:n] "<A-m>" ":lua require('cppman').search()<CR>"  "Open C++ manual")
+
+
+
 (local dropbar-api (require :dropbar.api))
 (vim.keymap.set :n "<Leader>;" dropbar-api.pick
                 {:desc "Pick symbols in winbar"})	

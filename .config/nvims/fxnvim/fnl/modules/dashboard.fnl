@@ -76,6 +76,11 @@
                                      :key :g
                                      :key_hl :type}
 
+                                    {:action :Lazy
+                                     :desc "Open Lazy menu"
+                                     :icon "󰒲  " ;;   
+                                     :key :z}
+
                                     {:action :qa
                                      :desc :Quit
                                      :icon "  " ;;   
@@ -91,10 +96,9 @@
                                      [
                                       (.. " " stats.loaded "/" stats.count) ;   
                                       (.. "󱦟 " ms :ms) ; 
-                                      (.. " " (get-update-count))
-                                     ])
+                                      (.. " " (get-update-count))])
 
-                           :header headers.fxnvim}
+                           :header headers.fxnvim }
                            :theme :doom})
 
 
