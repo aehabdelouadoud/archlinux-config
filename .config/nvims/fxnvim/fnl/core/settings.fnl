@@ -26,14 +26,14 @@
 ;; Indentation
 (set! expandtab)
 (set! smartindent)
-(set! shiftwidth 2)
-(set! tabstop 2)
+(set! shiftwidth 4)
+(set! tabstop 4)
 
 ;; Line numbers
 (set! number)
 (set! relativenumber)
-(set! numberwidth 3)
-(set! numberwidth 3)
+(set! numberwidth 5)
+(set! numberwidth 5)
 
 ;; Disable swap file
 (set! swapfile false)	
