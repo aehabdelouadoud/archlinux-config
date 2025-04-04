@@ -1,0 +1,18 @@
+================================================================================
+INTRODUCTION                                                             *xnvim*
+
+xnvim is a minimal Neovim configuration that provides a solid base for efficient development.
+
+                                                                      *xnvim-is*
+It is not:
+- A fully featured IDE with all the bells and whistles.
+- A one-size-fits-all solution with every plugin imaginable.
+                                                                   *xnvim-guide*
+
+To get started:
+- Fork this repo or copy this configuration to your `~/.config/nvim`
+- Run `:checkhealth health`, and then install needed packages
+- Customize it to fit your preferences and workflow.
+
+vim:tw=78:ts=8:ft=help:norl:
+
